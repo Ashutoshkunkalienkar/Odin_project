@@ -6,29 +6,29 @@ let arr=["rock", "paper","scissor"];
     // document.write("\n");
     let user = window.prompt("enetr any value (ROCK, PAPER AND SCISSOR)");
     var r="rock"; var p="paper"; var s="scissor";
-    document.write("computers is ",computer);
+    document.write("computers is: ",computer);
     document.write("<br> <br>")
-    document.write("\n","users is " ,user);
+    document.write("\n","users is: " ,user);
     document.write("<br><br>")
 
 if(computer == user)
 {
-    document.write("TIE");
+    document.write("<h1>TIE</h1>");
 }
 
 else if(computer == "rock" && user == "paper")
 {
-    document.write("USER WINS");
+    document.write("<h1>USER WINS</h1>");
 }
 
 else if(computer == "rock" && user == "scissors")
 {
-    document.write("COMPUTER WINS");
+    document.write("<h1>COMPUTER WINS</h1>");
 }
 
 else if(computer == "paper" && user == "rock")
 {
-    document.write("COMPUTER WINS");
+    document.write("<h1>COMPUTER WINS</h1>");
 }
 
 // else if(computer == 1 /*paper*/ && user == 1 /*rock*/)
@@ -38,17 +38,17 @@ else if(computer == "paper" && user == "rock")
 
 else if(computer == "paper" && user == "scissor")
 {
-    document.write("USER WINS");
+    document.write("<h1>USER WINS<h1>");
 }
 
 else if(computer == "scissor" && user == "rock")
 {
-    document.write("USER WINS")
+    document.write("<h1>USER WINS</h1>")
 }
 
 else if(computer == "scissor" && user =="paper")
 {
-    document.write("COMPUTER WINS")
+    document.write("<h1>COMPUTER WINS</h1>")
 }
 
 else
