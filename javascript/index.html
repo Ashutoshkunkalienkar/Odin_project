@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="index.js"></script>
+
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+
+
+       body{
+        background-color: black;
+       }
+
+        .container p{
+            height: 100vh;
+            display: inline-block;
+            position: absolute;
+            padding-top:100px;
+            left: 600px;
+            align-items: center;
+            justify-content: center;
+            
+        }
+
+        .container button
+        {
+            align-items: center;
+            display: inline-block;
+            position: relative;
+            top: 500px;
+            left: 650px;
+            padding-left: 20px;
+            justify-content: center;
+            width: 100px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1> THIS IS HEADIG</h1>
+        <p id="para"> <img src="th1.jpg" width="300px" height="300px"></p>
+        <p id="para1"> <img src="th.jpg" width="300px" height="300px"></p>
+
+        <button id="btn" onclick="hide()">OFF</button>
+        <button id="btn" onclick="show()">ON</button>
+    </div>
+</body>
+</html>

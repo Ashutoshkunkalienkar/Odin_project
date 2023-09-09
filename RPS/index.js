@@ -11,6 +11,8 @@ let arr=["rock", "paper","scissor"];
     document.write("\n","users is: " ,user);
     document.write("<br><br>")
 
+    // document.body.style.backgroundColor = "yellow";
+
 if(computer == user)
 {
     document.write("<h1>TIE</h1>");
