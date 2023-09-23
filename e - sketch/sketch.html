@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch-a-sketch</title>
+    <link rel="stylesheet" href="sketch.css">
+</head>
+<body>
+    
+    
+            <!-- `<h1>Etch-a-sketch</h1>` is creating a heading element with the text "Etch-a-sketch".
+            This heading will be displayed as the main title of the webpage. -->
+            <h1>Etch-a-sketch</h1>
+        
+        
+        <!-- The code `<div id="parent">...</div>` is creating a parent container element with the id
+        "parent". Inside this parent container, there is a child container element with the class
+        "child". -->
+        <div id="parent">
+
+            <!-- The code `<div class="child">...</div>` is creating a child container element with the
+            class "child". Inside this child container, there are three elements: -->
+            <div class="child">
+
+               <!-- The code `<label for ='color-picker' id="color">COLOR</label>` is creating a label
+               element with the text "COLOR". The `for` attribute is set to "color-picker", which
+               means that when the label is clicked, it will focus on the input element with the id
+               "color-picker". The `id` attribute is set to "color", which can be used to target
+               this label element in CSS or JavaScript. -->
+                <label for ='color-picker' id="color">COLOR</label>
+
+            <!-- The `<input type="color" id="colorPicker" value="#ff0080">` code is creating an input
+            element of type "color". This input element allows the user to select a color using a
+            color picker. The `id` attribute is set to "colorPicker", which can be used to target
+            this input element in CSS or JavaScript. The `value` attribute is set to "#ff0080",
+            which sets the initial value of the color picker to a specific color (in this case, a
+            shade of pink). -->
+            <input type="color" id="colorPicker" value="#ff0080"> <!--color picker -->
+
+            <!-- The code `<button id="eraser">ERASER</button>` is creating a button element with the
+            text "ERASER". The `id` attribute is set to "eraser", which can be used to target this
+            button element in CSS or JavaScript. This button can be clicked by the user to activate
+            the eraser functionality in the etch-a-sketch application. -->
+            <button id="eraser">ERASER</button>
+
+        </div>
+        
+<!-- The `<div id="container"></div>` code is creating a container element with the id "container". This
+container element is empty and will be used to hold the drawing area of the etch-a-sketch
+application. The JavaScript code in the "sketch.js" file will manipulate this container element to
+create a grid of squares that the user can draw on. -->
+        <div id="container"></div>
+
+
+<!-- The code `<script src="sketch.js"></script>` is including an external JavaScript file called
+"sketch.js" in the HTML document. This JavaScript file contains the code that will manipulate the
+container element with the id "container" to create a grid of squares for the etch-a-sketch
+application. By including this script, the functionality of the etch-a-sketch application will be
+added to the webpage. -->
+        <script src="sketch.js"></script>
+        
+    </div>
+
+</body>
+</html>
