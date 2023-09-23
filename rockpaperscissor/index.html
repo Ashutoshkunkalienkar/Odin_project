@@ -1,44 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+    <!-- This defines  -->
+    <!-- The `<div id="container">` is a container element that groups together the content inside it. It
+    is used to define a section of the HTML document. Inside the container, there is another `<div>`
+    element with the class "heading". This `<div>` contains an `<h1>` heading element with the text
+    "ROCK PAPER SCISSOR". The `&nbsp;` is a non-breaking space character that adds space between the
+    words "ROCK", "PAPER", and "SCISSOR". -->
     <div id="container">
 
+        <!-- The `<div class="heading">` is a container element that groups together the content inside
+        it. It is used to define a section of the HTML document. Inside the container, there is an
+        `<h1>` heading element with the text "ROCK PAPER SCISSOR". The `&nbsp;` is a non-breaking
+        space character that adds space between the words "ROCK", "PAPER", and "SCISSOR". -->
         <div class="heading">
             <h1>ROCK &nbsp;PAPER &nbsp;SCISSOR</h1>
         </div>
     </div>
 
-    <!-- <div id="user"><b>User: </b></div>
-    <div id="computer"><b>Computer: </b></div>
-    <div id="result"><b>Result: </b></div> -->
-
+   <!-- The `<div id="ucr">` is a container element that groups together the content inside it. It is
+   used to define a section of the HTML document. Inside the container, there are three `<div>`
+   elements with the classes "user", "result", and "computer". Each of these `<div>` elements
+   contains an `<h3>` heading element with the text "USER:", "RESULT:", and "COMPUTER:"
+   respectively. -->
     <div id="ucr">
+
+        <!-- The code `<div class="user"><h3>USER:</h3></div>
+                <div class="result"><h3>RESULT:</h3></div>
+                <div class="computer"><h3>COMPUTER:</h3></div>` is creating three separate `<div>`
+        elements with the classes "user", "result", and "computer". Each of these `<div>` elements
+        contains an `<h3>` heading element with the text "USER:", "RESULT:", and "COMPUTER:"
+        respectively. -->
         <div class="user"><h3>USER:</h3></div>
         <div class="result"><h3>RESULT:</h3></div>
-        <div class="computer"><h3>COMPUTER:</h3></div>
-        
+        <div class="computer"><h3>COMPUTER:</h3></div>     
     </div>
 
+<!-- The `<div class="gamediv">` is a container element that groups together the content inside it. It is
+used to define a section of the HTML document. Inside the container, there are three `<h1>` heading
+elements with the classes "gametext" and the ids "playertext", "resulttext", and "computertext"
+respectively. -->
     <div class="gamediv">
+
+        <!-- The code `<h1 class="gametext" id="playertext"> </h1>
+                <h1 class="gametext" id="resulttext"></h1>
+                <h1 class="gametext" id="computertext"></h1>` is creating three `<h1>` heading
+        elements with the class "gametext" and the ids "playertext", "resulttext", and
+        "computertext" respectively. -->
         <h1 class="gametext" id="playertext"> </h1>
         <h1 class="gametext" id="resulttext"></h1>
-        <h1 class="gametext" id="qcomputertext"></h1>
+        <h1 class="gametext" id="computertext"></h1>
     </div>
+
+    <!-- The code `<div class="button">` is creating a container element with the class "button". Inside
+    this container, there are three `<button>` elements with the class "choicebtn". Each button
+    represents a choice in the game of rock-paper-scissors. The first button has the emoji "✊" which
+    represents a fist (rock), the second button has the emoji "🖐️" which represents a hand with
+    fingers spread apart (paper), and the third button has the emoji "✌️" which represents a hand
+    with the index and middle fingers raised (scissors). These buttons are used to allow the user to
+    make their choice in the game. -->
     <div class="button">
 
+        <!-- The code `<button class="choicebtn">✊</button> 
+                <button class="choicebtn">🖐️</button>
+                <button class="choicebtn">✌️</button>` is creating three buttons with the class
+        "choicebtn". Each button represents a choice in the game of rock-paper-scissors. The first
+        button has the emoji "✊" which represents a fist (rock), the second button has the emoji
+        "🖐️" which represents a hand with fingers spread apart (paper), and the third button has
+        the emoji "✌️" which represents a hand with the index and middle fingers raised (scissors).
+        These buttons are used to allow the user to make their choice in the game. -->
         <button class="choicebtn">✊</button> 
         <button class="choicebtn">🖐️</button>
         <button class="choicebtn">✌️</button>
     </div>
+
+<!-- The line `<script src="rps.js"></script>` is including an external JavaScript file named "rps.js" in
+the HTML document. This allows the JavaScript code in the "rps.js" file to be executed and interact
+with the HTML elements in the document. -->
     <script src="rps.js"></script>
 </body>
-
 </html>

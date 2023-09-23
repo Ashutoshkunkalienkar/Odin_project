@@ -1,14 +1,26 @@
+/* In CSS, `*` is a universal selector that selects all elements on the page. `*{` is used to apply
+styles to all elements in the document. In this case, it sets the margin and padding of all elements
+to 0, effectively removing any default spacing. */
+
+/* The CSS code `*{ margin: 0px; padding: 0px; }` is setting the margin and padding of all elements on
+the page to 0. This effectively removes any default spacing that may be applied by the browser. */
 *{
     margin: 0px;
     padding: 0px;
 }
 
+/* The `body{` selector in CSS is used to apply styles to the `<body>` element of an HTML document. In
+this case, the styles being applied are: */
+/* The CSS code `body{ width: 100%; height: 100vh; overflow-x: hidden;  background: pink;  }` is
+setting the styles for the `<body>` element of an HTML document. */
 body{
     width: 100%;
     height: 100vh;
     overflow-x: hidden;
     /* background: pink; */
 }
+/* The CSS code `#container{ display: flex; height: 30vh; background-color: rgb(223, 253, 100); }` is
+setting the styles for an element with the ID "container". */
 #container{
     display: flex;
     /* width: 100%; */
@@ -17,12 +29,9 @@ body{
     background-color: rgb(223, 253, 100);
 }
 
-/* #container:hover{
-    background-color: rgb(225, 253, 100);
-    transform: scale(0.99);
-    transition: 0.5s;
-} */
 
+/* The `.heading` selector in CSS is targeting an element with the class "heading". The styles being
+applied to this element are: */
 .heading{
     /* width: 100%; */
     display: flex;
@@ -34,6 +43,9 @@ body{
     word-spacing: 4px;
 }
 
+/* The CSS code `.heading h1:hover{ color: red; display: flex; font-family: Courier New, monospace;
+font-size: 50px; /* text-align: center;  }` is targeting the `<h1>` element inside an element with
+the class "heading" when it is being hovered over by the user. */
 .heading h1:hover{
     color: red;
     display: flex;
@@ -44,6 +56,8 @@ body{
 
 
 
+/* The CSS code `#ucr{ width: 100%; display: flex; margin: auto; align-items: center; justify-content:
+space-evenly; }` is targeting an element with the ID "ucr" and applying the following styles: */
 #ucr{
     width: 100%;
     /* margin: auto; */
@@ -55,11 +69,13 @@ body{
     justify-content: space-evenly;
 }
 
-.user{
-    /* border: 2px solid black; */
+/* .user{
+    /* border: 2px solid black; 
 
-}
+} */
 
+/* The `.gamediv` selector in CSS is targeting an element with the class "gamediv" and applying the
+following styles: */
 .gamediv{
     margin-top: 10px;
     width: 100%;
@@ -71,6 +87,8 @@ body{
     justify-content: space-evenly;
 }
 
+/* The CSS code `#playertext` is targeting an element with the ID "playertext" and applying the
+following styles: */
 #playertext{
     display: flex;
     text-align: center;
@@ -84,6 +102,8 @@ body{
 
 
 
+/* The CSS code `#computertext` is targeting an element with the ID "computertext" and applying the
+following styles: */
 #computertext{
     display: flex;
     text-align: center;
@@ -95,6 +115,8 @@ body{
     border: 2px solid black;
 }
 
+/* The CSS code `#resulttext` is targeting an element with the ID "resulttext" and applying the
+following styles: */
 #resulttext{
     flex-direction: flex-start;
     display: flex;
@@ -106,6 +128,9 @@ body{
     border: 2px solid black;
 }
 
+/* The CSS code `.button{ width: 100%; height: 20vh; display: flex; text-align: center; align-items:
+center; justify-content: center; }` is targeting an element with the class "button" and applying the
+following styles: */
 .button{
     width: 100%;
     height: 20vh;
@@ -116,6 +141,8 @@ body{
     justify-content: center;
 }
 
+/* The CSS code `.choicebtn` is targeting an element with the class "choicebtn" and applying the
+following styles: */
 .choicebtn{
     
     width: 100px;
@@ -127,6 +154,8 @@ body{
     backdrop-filter: blur(10px);
 }
 
+/* The CSS code `.choicebtn:hover{ transform: scale(0.95); transition: 1s; }` is targeting an element
+with the class "choicebtn" when it is being hovered over by the user. */
 .choicebtn:hover{
     transform: scale(0.95);
     transition: 1s;
