@@ -1,12 +1,20 @@
+/* The CSS code `*{ margin: 0px; padding: 0px; }` sets the margin and padding of all elements on the
+page to 0 pixels. This ensures that there is no default spacing or padding around elements, allowing
+for more precise control over the layout and positioning of elements on the page. */
 *{
     margin: 0px;
     padding: 0px;
 }
 
+/* The CSS code `html{ overflow:none; }` is setting the overflow property of the HTML element to none.
+This means that any content that exceeds the dimensions of the HTML element will not be visible and
+will not cause scrollbars to appear. Essentially, it is preventing any overflow of content within
+the HTML element. */
 html{
     overflow:none ;
 }
 
+/* The `.container` class in the CSS code is defining the styling for a container element. */
 .container{
     width: 100%;
     height: 70vh;
@@ -19,9 +27,14 @@ html{
     color:white;
 }
 
+/* The CSS code `div{ border: 2px solid #ffffff; }` is setting a border for all `<div>` elements on the
+page. The border has a width of 2 pixels, a style of solid, and a color of #ffffff (white). This
+code will apply the border to all `<div>` elements, unless overridden by more specific CSS rules. */
 div{
     border: 2px soild #ffffff;
 }
+
+/* The `.nav` class is defining the styling for a navigation element. */
 .nav{
     display: flex;
     width: 80%;
@@ -29,12 +42,15 @@ div{
     margin-left: 150px;
 }
 
+/* The CSS code `.nav h1` is selecting the `<h1>` element that is a descendant of an element with the
+class "nav". It is then applying the following styles to that `<h1>` element: */
 .nav h1{
     color: aliceblue;
     font-weight: 800;
     /* flex: 1; */
 }
 
+/* The `.nav1` class is defining the styling for a navigation element. */
 .nav1{
     display: flex;
     width: 80%;
@@ -42,6 +58,8 @@ div{
     padding-top: 0%;
 }
 
+/* The CSS code `.nav1 ul` is selecting the `<ul>` element that is a descendant of an element with the
+class "nav1". It is then applying the following styles to that `<ul>` element: */
 .nav1 ul{
     width: 100%;
     /* top: 0px; */
@@ -52,21 +70,30 @@ div{
 }
 
 
+/* The CSS code `.mid1{ position:relative; top: 45%; left: -950px; }` is defining the styling for an
+element with the class "mid1". */
 .mid1{
     position:relative;
     top: 45%;
     left: -950px;
 }
 
+/* The CSS code `.mid1 h2{ font-size: 35; letter-spacing: 2px; word-spacing:3px ;}` is defining the
+styling for an `<h2>` element that is a descendant of an element with the class "mid1". */
 .mid1 h2{
     font-size: 35;
     letter-spacing: 2px;
     word-spacing:3px ;
 }
 
+/* The CSS code `.sign{ padding-top: 10px; }` is setting a padding of 10 pixels on the top of elements
+with the class "sign". This will create space between the top edge of the element and its content. */
 .sign{
     padding-top: 10px;
 }
+
+/* The CSS code `.sign button` is selecting the `<button>` element that is a descendant of an element
+with the class "sign". It is then applying the following styles to that `<button>` element: */
 .sign button{
     display: flex;
     /* position: relative; */
@@ -82,6 +109,8 @@ div{
     align-items: center;
     text-align: center;
 }
+
+/* The `.pict` class is defining the styling for an element. */
 .pict{
     border: 2px solid white;
     width: 120%;
@@ -91,6 +120,8 @@ div{
     top: -195px;
 }
 
+/* The CSS code `.pict p` is selecting the `<p>` element that is a descendant of an element with the
+class "pict". It is then applying the following styles to that `<p>` element: */
 .pict p{
     position: relative;
     text-align: center;
@@ -98,6 +129,9 @@ div{
     letter-spacing: 2px;
 }
 
+/* The `.container2` class is defining the styling for an element. It sets the width to 100%, height to
+50vh, and background color to #fff (white). It also sets the background position to center and
+background size to cover. This class is used to create a container element with a white background. */
 .container2{
     width: 100%;
     height: 50vh;
@@ -106,6 +140,11 @@ div{
     background-size: cover;
 }
 
+/* The `.nav3` class is defining the styling for a navigation element. It sets the display property to
+flex, which allows the child elements to be displayed in a row. It also sets the padding to 30
+pixels, which adds space around the content of the element. The commented out lines (`/* border: 2px
+solid black; `, `position: relative; `, ` margin: auto; `) are not currently being
+applied and are likely used for testing or future modifications. */
 .nav3{
     /* border: 2px solid black; */
     display: flex;
@@ -114,6 +153,8 @@ div{
     /* margin: auto; */
 }
 
+/* The CSS code `.nav3 p` is selecting the `<p>` element that is a descendant of an element with the
+class "nav3". It is then applying the following styles to that `<p>` element: */
 .nav3 p{
     position: relative;
     top: opx;
@@ -122,6 +163,12 @@ div{
     font-weight: 800;
 }
 
+/* The `.par` class is defining the styling for a container element. It sets the display property to
+flex, which allows the child elements to be displayed in a row. It also sets the flex-direction
+property to row, which arranges the child elements horizontally. The align-items property is set to
+center, which vertically aligns the child elements in the center of the container. The
+justify-content property is set to space-evenly, which evenly distributes the child elements along
+the main axis with equal space between them. */
 .par{
     display: flex;
     flex-direction: row;
@@ -131,6 +178,12 @@ div{
 
 }
 
+/* The `.parent-box` class is defining the styling for a container element. It sets the display
+property to flex, which allows the child elements to be displayed in a row. The width and height
+properties set the dimensions of the container to 120 pixels and 170 pixels respectively. The
+`flex-direction` property is set to column, which arranges the child elements vertically. The
+`padding-bottom` property adds 40 pixels of space at the bottom of the container. The `margin-top`
+and `margin-left` properties set the top and left margins of the container to 10 pixels. */
 .parent-box{
     display: flex;
     width: 120px;
@@ -143,7 +196,12 @@ div{
     margin-left:10px ;
     flex-direction: column;
 }
- .box{
+
+/* The `.box` class is defining the styling for a container element. It sets the border property to
+have a width of 2 pixels, a style of solid, and a color of blue. The width and height properties set
+the dimensions of the container to 120 pixels and 100 pixels respectively. The border-radius
+property sets the border corners to have a radius of 10 pixels. */
+.box{
     border: 2px solid blue;
     /* flex-direction: column; */
     width: 120px;
@@ -152,10 +210,16 @@ div{
     /* margin-left: 10px; */
  }
 
- .in-sen p{
+/* The CSS code `.in-sen p{ text-align: center; }` is setting the text alignment of all `<p>` elements
+that are descendants of an element with the class "in-sen" to center. This means that any text
+within those `<p>` elements will be horizontally centered within their parent element. */
+.in-sen p{
     text-align: center;
  }
 
+ /* The `.container3` class is defining the styling for a container element. It sets the width to 100%
+ of the parent element, the height to 70% of the viewport height (`vh`), and the display property to
+ flex. */
  .container3{
     width: 100%;
     height: 70vh;
@@ -167,6 +231,11 @@ div{
     align-items: center;
  }
 
+ /* The `.in-sen-1` class is defining the styling for an element. It sets the position property to
+ relative, which positions the element relative to its normal position. The display property is set
+ to flex, which allows the child elements to be displayed in a row. The text-align property is set
+ to center, which horizontally aligns the text within the element. The width property is set to 70%,
+ which sets the width of the element to 70% of its parent element. */
  .in-sen-1 {
     /* border: 2px solid black; */
     position: relative;
@@ -175,12 +244,17 @@ div{
     width: 70%;
  }
 
+ /* The CSS code `.in-sen-1 p{ font-style: italic; font-size: 40px; }` is selecting all `<p>` elements
+ that are descendants of an element with the class "in-sen-1". It is then applying the following
+ styles to those `<p>` elements: */
  .in-sen-1 p{
 
     font-style: italic;
     font-size: 40px;
  }
 
+ /* The CSS code `.hd4 h4` is selecting the `<h4>` element that is a descendant of an element with the
+ class "hd4". It is then applying the following styles to that `<h4>` element: */
  .hd4 h4{
     width: 200px;
     display: inline-block;
@@ -190,12 +264,20 @@ div{
     font-size: 20;
  }
 
+ /* The `.container4` class is defining the styling for a container element. It sets the width to 100%
+ of the parent element, the height to 50% of the viewport height (`vh`), and the display property to
+ flex. This means that the container element will take up the full width of its parent element and
+ have a height equal to 50% of the viewport height. The `display: flex` property allows the child
+ elements of the container to be displayed in a row. */
  .container4{
     width: 100%;
     height: 50vh;
     display: flex;
  }
 
+ /* The CSS code `.container4 .in-sen-2` is selecting an element with the class "in-sen-2" that is a
+ descendant of an element with the class "container4". It is then applying the following styles to
+ that element: */
  .container4 .in-sen-2{
     display: flex;
     border-radius: 10px;
@@ -210,12 +292,16 @@ div{
     /* justify-content: center; */
  }
 
+ /* The CSS code `.in-sen-2 h1` is selecting the `<h1>` element that is a descendant of an element with
+ the class "in-sen-2". It is then applying the following styles to that `<h1>` element: */
  .in-sen-2 h1 {
     text-align: center;
     padding-left: 100px;
 
  }
  
+ /* The CSS code `.in-sen-3 p` is selecting all `<p>` elements that are descendants of an element with
+ the class "in-sen-3". It is then applying the following styles to those `<p>` elements: */
  .in-sen-3 p{
     text-align: center;
     display: inline-block;
@@ -225,6 +311,8 @@ div{
 
  }
 
+ /* The CSS code `.sin button` is selecting the `<button>` element that is a descendant of an element
+ with the class "sin". It is then applying the following styles to that `<button>` element: */
  .sin button{
     width: 90px;
     height: 5vh;
@@ -233,6 +321,10 @@ div{
     border: 2px solid white;
  }
 
+ /* The above code is defining the CSS styles for a footer element. It sets the width to 100% of its
+ parent element, the height to 10% of the viewport height, and the background color to a dark
+ blueish color. The text color is set to white. The footer is displayed as a flex container, with
+ its child elements aligned vertically and horizontally centered. */
  .footer{
     width: 100%;
     height: 10vh;
@@ -244,6 +336,11 @@ div{
     justify-content: center;
  }
 
+ /* The above code is defining a CSS rule for the paragraphs within the footer element. It sets the
+ display property to flex, which allows the paragraphs to be arranged in a flexible layout. It also
+ sets the text-align property to center, which horizontally aligns the text within the paragraphs.
+ Additionally, it sets the letter-spacing property to 2px, which increases the spacing between the
+ letters in the paragraphs. */
  .footer p{
     display: flex;
     text-align: center;
