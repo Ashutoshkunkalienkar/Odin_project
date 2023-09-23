@@ -1,0 +1,115 @@
+/* The CSS code `*{}` is a universal selector that targets all elements on the page. */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* The `.container` class is defining the styling for a container element. */
+.container{
+    /* background-image: url(background.jpg); */
+    width: 100%;
+    height: 100vh;
+    /* background: #e3f9ff; */
+    background-image: linear-gradient(to right,#3a4452 , rgb(137, 130, 133), #3a4452);
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* The CSS code `h1{}` is targeting the `<h1>` element and defining its styling. */
+h1{
+    text-shadow: rgb(0, 0, 0) 1px 0 1px;
+    font-size: 40px;
+    letter-spacing: 9px;
+}
+
+/* The `.calculator` class is defining the styling for a calculator element. */
+.calculator{
+    background: #3a4452;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* The CSS code `.calculator form input` is targeting the input elements that are inside a form element
+with the class "calculator". It is defining the styling for these input elements. */
+.calculator form input{
+    border: 0;
+    outline: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    box-shadow: -8px -8px 15px rgba(63, 61, 61, 0.1),5px 5px 15px rgba(0,0,0,0.2);
+    background: transparent;
+    /* color: black; */
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px;
+}
+
+/* The CSS code `form .display` is targeting the elements with the class "display" that are inside a
+form element. It is defining the styling for these elements. */
+form .display{
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 0;
+}
+
+/* The CSS code `form .display input` is targeting the input elements that are inside an element with
+the class "display" that is inside a form element. It is defining the styling for these input
+elements. */
+form .display input{
+    background-color: white;
+    color: black;
+    /* font-style: 'Orbitron', sans-serif; */
+    text-align: right;
+    flex: 1;
+    font-size: 45px;
+    box-shadow: none;
+}
+
+/* The CSS code `form input.equal` is targeting the input elements that have the class "equal" and are
+inside a form element. It is defining the styling for these input elements. In this case, it is
+setting the width of the input element to 145 pixels and the color to aqua. */
+form input.equal{
+    width: 145px;
+    color: aqua;
+
+}
+
+/* The CSS code `form input.operator{ color: aqua; }` is targeting the input elements that have the
+class "operator" and are inside a form element. It is defining the styling for these input elements.
+In this case, it is setting the color of the input elements with the class "operator" to aqua. */
+form input.operator{
+    color: aqua;
+}
+
+/* The CSS code `#calculator{ display: flex; }` is targeting the element with the ID "calculator" and
+setting its display property to flex. This means that the children elements of the "calculator"
+element will be displayed in a flexible box layout, allowing them to be arranged horizontally or
+vertically depending on the flex-direction property. */
+#calculator{
+    display: flex;
+   
+}
+
+/* The CSS code `#C:hover{ transform: translate(0px,0px) rotate(20deg); padding: 10px; }` is targeting
+the element with the ID "C" when it is being hovered over by the user. */
+#C:hover{
+    transform: translate(0px,0px)  rotate(20deg);
+    /* transform: ; */
+    padding: 10px;
+}
+
+/* The CSS code `#A1:hover{ transform: translate(0px,0px) rotate(20deg) }` is targeting the element
+with the ID "A1" when it is being hovered over by the user. It is applying a transform property to
+the element, which includes a translation and rotation. The translation is set to
+`translate(0px,0px)`, which means there is no movement in the x and y directions. The rotation is
+set to `rotate(20deg)`, which rotates the element by 20 degrees clockwise. So, when the user hovers
+over the element with the ID "A1", it will rotate by 20 degrees. */
+#A1:hover{
+    transform: translate(0px,0px) rotate(20deg)
+}

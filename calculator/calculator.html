@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULATOR</title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+    
+   <!-- The `<div class="container">` is creating a container element that wraps around the entire
+   calculator interface. It is used to group and organize the different elements of the calculator,
+   making it easier to apply styles and layout. -->
+    <div class="container">
+
+       <!-- The `<div id="calculator">` is a container element with the id "calculator". Inside this div,
+       there are multiple `<h1>` elements with different ids ("C", "A1", "L", etc.). These `<h1>`
+       elements are used to display the letters that spell out the word "CALCULATOR". It is purely
+       for visual purposes and does not have any functionality in terms of the calculator itself. -->
+        <div id="calculator" >
+            <h1 id="C">C</h1>
+            <h1 id="A1">A</h1>
+            <h1 id="C">L</h1>
+            <h1 id="A1">C</h1>
+            <h1 id="C">U</h1>
+            <h1 id="A1">L</h1>
+            <h1 id="C">A</h1>
+            <h1 id="A1">T</h1>
+            <h1 id="C">O</h1>
+            <h1 id="A1">R</h1>
+        </div>
+
+        <!-- The `<div class="calculator">` section is creating the main calculator interface. It
+        contains a form with various input elements that represent the buttons and display of the
+        calculator. -->
+        <div class="calculator">
+            <!-- <h1>CALCULATOR</h1> -->
+            <form action="">
+
+               <!-- The `<div class="display">` is creating a container element that wraps around the
+               input element. It is used to group and style the display area of the calculator. The
+               input element inside the div is of type "text" and has the name "display". It serves
+               as the display area where the user can see the numbers and calculations entered into
+               the calculator. The placeholder attribute is set to "00", which provides a default
+               value or hint to the user about the expected input format. -->
+                <div class="display">
+                    <input type="text" name="display" placeholder="00">
+                </div>
+
+                <!-- The code you provided is creating a set of buttons for the calculator interface.
+                Each `<div>` element represents a row of buttons, and each `<input>` element
+                represents a button. -->
+                <div>
+                    <input type="button" value="AC" onclick="display.value = ''" class="operator">
+                    <input type="button" value="DE" onclick="display.value = display.value.toString().slice(0,-1)" class="operator">
+                    <input type="button" value="." onclick="display.value += '.'" class="operator">
+                    <input type="button" value="/" onclick="display.value += '/'" class="operator">
+                </div>
+
+                <div>
+                    <input type="button" value="7" onclick="display.value += '7'">
+                    <input type="button" value="8" onclick="display.value += '8'">
+                    <input type="button" value="9" onclick="display.value += '9'">
+                    <input type="button" value="*" onclick="display.value += '*'" class="operator">
+                </div>
+
+                <div>
+                    <input type="button" value="4" onclick="display.value += '4'">
+                    <input type="button" value="5" onclick="display.value += '5'">
+                    <input type="button" value="6" onclick="display.value += '6'">
+                    <input type="button" value="-" onclick="display.value += '-'" class="operator">
+                </div>
+
+                <div>
+                    <input type="button" value="1" onclick="display.value += '1'">
+                    <input type="button" value="2" onclick="display.value += '2'">
+                    <input type="button" value="3" onclick="display.value += '3'">
+                    <input type="button" value="+" onclick="display.value += '+'" class="operator">
+                </div>
+
+                <div>
+                    <input type="button" value="00" onclick="display.value += '00'">
+                    <input type="button" value="0" onclick="display.value += '0'">
+                    <input type="button" value="=" onclick="display.value = eval(display.value)" class="equal">
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- <script src="calculator.js"></script> -->
+</body>
+</html>
