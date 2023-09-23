@@ -5,49 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="index.js"></script>
-
-    <style>
-        *{
-            margin: 0px;
-            padding: 0px;
-        }
-
-
-       body{
-        background-color: black;
-       }
-
-        .container p{
-            height: 100vh;
-            display: inline-block;
-            position: absolute;
-            padding-top:100px;
-            left: 600px;
-            align-items: center;
-            justify-content: center;
-            
-        }
-
-        .container button
-        {
-            align-items: center;
-            display: inline-block;
-            position: relative;
-            top: 500px;
-            left: 650px;
-            padding-left: 20px;
-            justify-content: center;
-            width: 100px;
-            height: 50px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+   <!-- The code you provided is an HTML code snippet. It represents a container with a heading, two
+   paragraphs containing images, and two buttons. -->
     <div class="container">
+
+<!-- The line `<h1> THIS IS HEADIG</h1>` is creating a heading element in HTML with the text "THIS IS
+HEADIG". The `<h1>` tag is used to define the most important heading on the page, typically the main
+heading. -->
         <h1> THIS IS HEADIG</h1>
+
+        <!-- The code `<p id="para"> <img src="th1.jpg" width="300px" height="300px"></p>` and `<p
+        id="para1"> <img src="th.jpg" width="300px" height="300px"></p>` are creating two paragraphs
+        with images inside them. -->
         <p id="para"> <img src="th1.jpg" width="300px" height="300px"></p>
         <p id="para1"> <img src="th.jpg" width="300px" height="300px"></p>
 
+        <!-- The code `<button id="btn" onclick="hide()">OFF</button> <button id="btn"
+        onclick="show()">ON</button>` is creating two buttons with the text "OFF" and "ON"
+        respectively. These buttons have an `id` attribute set to "btn" and an `onclick` attribute
+        that calls the functions `hide()` and `show()` respectively when clicked. -->
         <button id="btn" onclick="hide()">OFF</button>
         <button id="btn" onclick="show()">ON</button>
     </div>

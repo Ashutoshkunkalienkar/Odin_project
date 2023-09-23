@@ -1,0 +1,42 @@
+/* The CSS code `*{ margin: 0px; padding: 0px; }` sets the margin and padding of all elements on the
+page to 0 pixels. This ensures that there is no extra space or padding around any elements, creating
+a cleaner and more consistent layout. */
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+/* The CSS code `body{ background-color: black; }` is setting the background color of the body element
+to black. This means that the entire background of the webpage will be black. */
+body{
+background-color: black;
+}
+
+/* The CSS code `.container p` is targeting the `<p>` elements that are inside an element with the
+class "container". */
+.container p{
+    height: 100vh;
+    display: inline-block;
+    position: absolute;
+    padding-top:100px;
+    left: 600px;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+/* The CSS code `.container button` is targeting the `<button>` elements that are inside an element
+with the class "container". It is applying various styles to these buttons, including: */
+.container button
+{
+    align-items: center;
+    display: inline-block;
+    position: relative;
+    top: 500px;
+    left: 650px;
+    padding-left: 20px;
+    justify-content: center;
+    width: 100px;
+    height: 50px;
+}
