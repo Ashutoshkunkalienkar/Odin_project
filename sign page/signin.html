@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in</title>
+    <link rel="stylesheet" href="signin.css">
+</head>
+
+<body>
+    <div id="container">
+        <div class="image">
+            <div class="backblack">
+
+                <div class="logo">
+                    <img src="logo.png" alt="logo" class="whale">
+                    <h1 class="omale">Omale</h1>
+                </div>
+            </div>
+        </div>
+
+        <div id="container2">
+            <div id="sign">
+                <form action="" id="form_input" onsubmit=" return checkPasssword (this)">
+                    <div class="heading">
+                        <h1>Sign in</h1>
+                    </div>
+                    <div class="input-box">
+                        <!-- Username -->
+                        <input type="text" placeholder="Username">
+                        <p class="user">👤</p>
+                    </div>
+
+                    <div class="input-box">
+                        <!-- Email -->
+                        <input type="text" placeholder="Email">
+                        <p class="user">@</p>
+                    </div>
+
+                    <div class="input-box">
+                        <!-- Password -->
+                        <input type="password" minlength="8" name="password1" placeholder="password">
+                        <p class="user">🔒 </p>
+                    </div>
+
+                    <div class="input-box">
+                        <!-- Confirm -->
+                        <input type="password" minlength="8" name="password2" placeholder="Confirm Password">
+                        <p class="user">🔒</p>
+                    </div>
+                    <div id="submit">
+                        <input type="submit" value="Create Account">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+        <script>
+            function checkPasssword(form) {
+                password1 = form.password1.value
+                password2 = form.password2.value
+
+                //if password not entered
+                if (password1 == '') {
+                    alert("please entered the password")
+                }
+
+                else if (password2 == '') {
+                    alert("please entered the confirm password")
+                }
+
+                else if (password1 != password2) {
+                    alert("\nPassword did not match: Please try again...")
+                    return false;
+                }
+
+                else {
+                    window.location.href = "http://127.0.0.1:5500/signpage/logout.html"
+                    alert("Password Match: Welcome to Omale")
+                }
+            }
+        </script>
+
+</body>
+
+</html>
