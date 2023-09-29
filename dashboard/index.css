@@ -1,0 +1,623 @@
+/* The CSS code `*` selects all elements on the page and applies the following styles to them: */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+/* The CSS code `body{}` is targeting the `<body>` element of the HTML document. */
+body{
+    /* overflow: hidden; */
+    width: 100%;
+    /* background-color: rgb(0, 0, 0); */
+    background-position: center;
+    background-size: cover;
+}
+
+/* The `#container` selector in CSS is targeting an element with the ID "container". It applies the
+following styles to that element: */
+#container{
+    /* overflow: hidden; */
+    border: 2px solid black;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 100px 100px;
+    grid-template-columns: 1fr  5fr;
+}
+
+/* The CSS code `.item-1` is targeting an element with the class "item-1". It applies the following
+styles to that element: */
+.item-1{
+    /* background-color: red; */
+    grid-row: 1 / 4;
+}
+
+/* The CSS code `.left-top` is targeting an element with the class "left-top". It sets the width of the
+element to 100% of its parent container, and makes it a flex container. The `align-items: start`
+property aligns the flex items along the start of the cross axis (top in this case), and
+`justify-content: center` property centers the flex items along the main axis (horizontally in this
+case). */
+.left-top{
+    width: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
+
+/* The CSS code `logo{}` is targeting an element with the class "logo". It applies the following
+styles to that element: */
+.logo{
+    display: flex;
+    font-size: 44px;
+    position: relative;
+    right: -23px;
+    text-align: center;
+    /* animation: rotate 2s infinite alternate */
+}
+
+/* The `@keyframes` rule in CSS is used to define animations. In this specific code, the `@keyframes
+rotate` rule is defining an animation called "rotate". */
+@keyframes rotate{
+    0%{
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(180deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+/* The CSS code `.logo:hover` is targeting an element with the class "logo" when it is being hovered
+over by the user. It applies the animation called "rotate" to the element, with a duration of 2
+seconds, infinite repetition, and alternate direction. This means that when the user hovers over the
+element, it will start rotating continuously in one direction, and when the hover is removed, it
+will rotate in the opposite direction. */
+.logo:hover{
+    animation: rotate 2s infinite alternate;
+}
+
+/* The `.logo-name` class is defining the styles for an element with the class "logo-name". It sets the
+display property to flex, which allows the element to be a flex container. The text-align property
+is set to center, which horizontally aligns the text within the element. The align-items and
+justify-content properties are set to center, which vertically and horizontally align the content
+within the element. The margin property is set to auto, which centers the element horizontally
+within its parent container. The font-size property sets the size of the text to 23 pixels. The
+font-weight property is set to bolder, which makes the text appear bold. The color property is set
+to white, which sets the color of the text to white. */
+.logo-name{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    font-size: 23px;
+    font-weight: bolder;
+    /* font-style: italic; */
+    color: white;
+}
+
+/* The CSS code `.leftpart` is targeting an element with the class "leftpart". It applies the following
+styles to that element: */
+ .leftpart{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+    background-color: #7fa2e6;
+    background-image:linear-gradient(to left,#00000033 , #000000);
+    background-position: center;
+    background-size: cover;
+    border-radius: 20px;
+    margin: 0px;
+
+
+}
+
+/* The `.btn` class is defining the styles for a button element. It sets the width to 87% of its parent
+container, the height to 36 pixels, and the border-radius to 10 pixels, giving the button rounded
+corners. The `align-items` and `justify-content` properties are set to center, which horizontally
+and vertically aligns the content within the button. The `display` property is set to flex, which
+allows the button to be a flex container. The `background` property is set to transparent, which
+makes the button's background transparent. The `margin` property is set to 14 pixels, which adds
+spacing around the button. */
+.btn{
+    width: 87%;
+    height: 36px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background: transparent;
+    /* backdrop-filter: blur(156px); */
+    margin: 14px;
+}
+
+/* The `.img` class is defining the styles for an element with the class "img". It sets the width of
+the element to 20 pixels, the height to 17 pixels, and the display property to flex. The position
+property is set to relative, which allows the element to be positioned relative to its normal
+position. The right property is set to 28 pixels, which moves the element 28 pixels to the right.
+The top property is set to -4 pixels, which moves the element 4 pixels up. The margin-left property
+is set to 10 pixels, which adds spacing to the left of the element. */
+.img{
+    width: 20px;
+    height: 17px;
+    display: flex;
+    position: relative;
+    right: 28px;
+    top: -4px;
+    margin-left: 10px;
+}
+
+/* The above code is defining a CSS class called ".h". It sets the display property to "flex" and the
+color property to "white". */
+.h{
+    display: flex;
+    color: white;
+    
+}
+
+/* The above code is defining a CSS style for a button element with the class "btn". The button will
+have a transparent background, a black border, and no outline. It will have a backdrop filter
+applied with a blur of 84 pixels. The button will have a width of 145 pixels, a height of 38 pixels,
+and a border radius of 10 pixels, giving it rounded corners. The text inside the button will be
+centered both horizontally and vertically. The font size will be 16 pixels and the text color will
+be white. */
+.btn button{
+    display: flex;
+  background: transparent;
+  border: black;
+  outline: transparent;
+  backdrop-filter: blur(84px);
+  width: 145px;
+  height: 38px;
+  border-radius: 10px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  color: white;
+}
+
+/* The above code is defining a CSS rule for the focus state of a button element with the class "btn".
+When the button is focused, it will have a blue border and an animation called "shake" will be
+applied for a duration of 0.3 seconds. However, there seems to be a syntax error in the code as the
+border property should have a value specified, such as "border: 1px solid blue;". Additionally, the
+background-color property is commented out, so it will not have any effect on the button. */
+.btn button:focus{
+    /* background-color: black; */
+    border: blue;
+    animation: shake 0.3s;
+}
+
+/* The above code is defining a CSS animation called "shake". This animation will cause an element to
+scale up by 5% and then return to its original size. The animation will occur over a duration of
+time, which can be specified when applying the animation to an element. */
+@keyframes shake{
+
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.05);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+/* The above code is defining a CSS class called "btn1". This class is being used to style a button
+element. The button will have a width of 87%, a height of 31 pixels, and a border radius of 10
+pixels. The button will be aligned vertically and horizontally in the center using the align-items
+and justify-content properties. The button will be displayed as a flex container, allowing its child
+elements to be flex items. Finally, the button will have a margin of 14 pixels on all sides. */
+.btn1{
+    width: 87%;
+    height: 31px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 14px;
+}
+
+/* The above code is defining a CSS class called "buttons" and applying the following styles to it:
+- The "display" property is set to "flex", which allows the buttons to be displayed in a flexible
+row layout.
+- The "text-align" property is set to "left", which aligns the text within the buttons to the left. */
+.buttons{
+    display: flex;
+    text-align: left;
+}
+
+
+/* The above code is defining a CSS class called "item-2". It sets the display property to "grid" and
+defines a grid layout with two rows and two columns. The first row takes up 5 parts of the available
+space, while the second row takes up 3 parts. The class also sets a border-radius of 20px and then
+overrides it with a border-radius of 26px. It adds a margin of 2px and sets a background image using
+a linear gradient from black with 85% opacity to white with 0% opacity. Finally, it sets the
+background */
+.item-2{
+    /* background-color: blue; */
+    display: grid;
+    grid-template-rows: 100px 100px;
+    grid-template-columns: 5fr 3fr;
+    border-radius: 20px;
+    border-radius: 26px;
+    margin: 2px;
+    background-image: linear-gradient(to right,#000000db , #fff0);
+    background-color: #7fa2e6;
+}
+
+/* The above CSS code is defining a class called "top-center-part1". This class is being used to center
+the content vertically and horizontally within its parent container. It achieves this by setting the
+width and height of the element to 100%, and using flexbox properties to align the content in the
+center both vertically and horizontally. */
+.top-center-part1{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* The above code is defining a CSS class called "search". It sets the display property to flex, which
+allows the elements with this class to be displayed in a flexible box layout. It also sets the
+margin-left property to -72px, which will move the elements with this class 72 pixels to the left.
+Finally, it sets the font-size property to 26px, which will set the font size of the text within the
+elements with this class to 26 pixels. */
+.search{
+    display: flex;
+    margin-left: -72px;
+    font-size: 26px;
+}
+
+/* The above code is defining a CSS class called "search-bar" and setting its width to 80%. */
+.search-bar{
+    width: 80% ;
+}
+
+
+/* The above code is defining the CSS styles for an input element within a search bar. It sets the
+margin, width, height, border-radius, background, box-shadow, padding, and color properties for the
+input element. Some of the properties are commented out, which means they are not currently being
+applied. */
+.search-bar input{
+    margin: 37px;
+    width: 100%;
+    height: 34px;
+    /* border: 2px solid black; */
+    border-radius: 26px;
+    /* outline: none; */
+    background: transparent;
+    box-shadow: rgb(122, 119, 119);
+    padding: 21px 30px 16px 28px;
+    color: white;
+}
+
+/* The above code is defining a CSS rule for the input element inside a search bar. When the input
+element is in focus (selected by the user), it will have a border color of #f30303 and an animation
+called "bars" with a duration of 0.3 seconds will be applied. */
+.search-bar input:focus{
+    border: #f30303;
+    animation: bars 0.3s;
+}
+
+/* The above code is defining a CSS animation called "bars" using the @keyframes rule. This animation
+scales an element from its original size to 5% larger and then back to its original size. The
+animation runs in a continuous loop. */
+@keyframes bars{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.05);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+/* The above code is defining a CSS class called "top-center-part2". This class is using the flexbox
+layout to display its contents. It has a width and height of 100% to take up the full width and
+height of its parent container. */
+.top-center-part2{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+/* The above code is defining a CSS class called "logo-name". This class is being used to style an
+element, most likely a logo or a name, with the following properties: */
+.logo-name{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* color: black; */
+}
+
+/* The above code is defining a CSS class called "box1". This class is being applied to an HTML
+element, which will have a width of 10% of its parent element, a height of 52% of its parent
+element, a font size of 41 pixels, and a border radius of 100 pixels. The element will also have a
+cursor that changes to a pointer when hovered over, a margin of 38 pixels, and its text will be
+centered. Additionally, the element will be displayed as a flex container. */
+.box1{
+    width: 10%;
+    height: 52%;
+    font-size: 41px;
+    border-radius: 100px;
+    cursor: pointer;
+    margin: 38px;
+    text-align: center;
+    display: flex;
+}
+
+/* The above code is defining a CSS class called "box-name". This class is being used to style an HTML
+element with a font size of 20 pixels, a font family of 'Courier New', Courier, monospace, a font
+weight of bolder, a letter spacing of 2 pixels, a font style of italic, and a text color of rgb(251,
+251, 251) which is a shade of white. */
+.box-name{
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    font-style: italic;
+    color: rgb(251, 251, 251);
+}
+
+
+/* The above code is defining a CSS class called "top-center-part3". This class is using the flexbox
+layout to display its contents. It has a width and height of 100% to take up the full width and
+height of its parent container. */
+.top-center-part3{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+/* The above code is defining a CSS class called "specify". This class is being used to style an
+element with the following properties:
+- The element will be displayed as a flex container.
+- The width and height of the element will be set to 100% of its parent container.
+- The child elements within the flex container will be vertically aligned to the center.
+- The child elements within the flex container will be horizontally aligned to the start. */
+.specify{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: start;
+}
+
+/* The above code is defining a CSS class called "logo1". This class is being applied to an element,
+which will have a width of 9% of its parent element, a height of 74% of its parent element, a border
+radius of 52 pixels, and a cursor that changes to a pointer when hovered over. The font size is set
+to 58 pixels, and the element will be displayed as a flex container with its content centered
+horizontally. It will have a right margin of 16 pixels and a left margin of 54 pixels. */
+.logo1{
+    width: 9%;
+    height: 74%;
+    border-radius: 52px;
+    cursor: pointer;
+    font-size: 58px;
+    display: flex;
+    text-align: center;
+    margin-right: 16px;
+    margin-left: 54px;
+}
+
+/* The above code is defining a CSS class called "specifing". This class is specifying the font family
+as sans-serif, font weight as bolder, font style as italic, and text color as white. */
+.specifing{
+    font-family: sans-serif;
+    font-weight: bolder;
+    font-style: italic;
+    color: white;
+}
+
+/* The above code is defining a CSS class called "top-center-part4". This class is being used to create
+a grid layout with three columns, each taking up an equal amount of space (1fr). The grid will take
+up the full width and height of its container. */
+.top-center-part4{
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* The above code is defining a CSS class called "button-1". This class is being used to style a button
+element. The code is using flexbox properties to center the content of the button both vertically
+and horizontally within its container. The button will take up the full width and height of its
+container. */
+.button-1{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+/* The above code is defining a CSS style for a button element with the class "button-1". The button
+will have a width of 77 pixels, a height of 40 pixels, and a border radius of 18 pixels, giving it a
+rounded appearance. The background is set to transparent, and the color of the text inside the
+button is set to white. The commented out line "backdrop-filter: blur(10px);" suggests that there
+may have been an intention to apply a blur effect to the background, but it is currently disabled. */
+.button-1 button{
+    width: 77px;
+    height: 40px;
+    border-radius: 18px;
+    background: transparent;
+    /* backdrop-filter: blur(10px); */
+    color: white;
+} 
+
+
+
+/* The above code is defining a CSS class called "item-3". */
+.item-3{
+    /* background-color: yellow; */
+    grid-row: 3 / 4;
+    grid-template-columns: 3fr 1fr;
+    display: grid;
+    border-radius: 16px;
+    margin: 5px;
+    background-image: linear-gradient(to right,#ffffffc4 ,#f0f0f000 ,#ffffffc4 );
+    background-color: #76e0ff;
+    overflow: hidden;
+} 
+
+/* The above code is defining a CSS class called "container3". This class is being used to create a
+grid layout with two columns and two rows. The "grid-gap" property sets the spacing between grid
+items to 23 pixels. The "align-items" and "justify-content" properties are used to center the grid
+items both vertically and horizontally. The "overflow" property is set to "auto" to enable scrolling
+if the content inside the grid exceeds the container's dimensions. */
+.container3{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 23px;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+}
+
+/* The above code is defining the CSS styles for a card element. */
+.card{
+    width: 60%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    /* outline: transparent; */
+    /* border: 2px solid black; */
+    /* background-color: white; */
+    background: transparent;
+    align-items: start;
+    justify-content: start;
+    margin: auto;
+    border-radius: 19px;
+    border-left: 10px solid #0000002e;
+    border-bottom: 10px solid #00000021;
+    /* transform: rotate(-10deg); */
+    
+}
+
+
+
+/* The above code is defining a CSS class called "project-name". This class is being used to style an
+element in an HTML document. The styles applied to this class include making the element a flex
+container, setting the font size to 24 pixels, using the Arial, Helvetica, sans-serif font family,
+making the font weight bolder, and adding a margin of 20 pixels. */
+.project-name{
+    display: flex;
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    margin: 20px;
+}
+
+/* The above code is defining a CSS class called "project-info". It sets the display property to
+"flex", which allows the elements with this class to be laid out in a flexible box model. It also
+sets a margin of 20 pixels around the elements with this class. */
+.project-info{
+    display: flex;
+    margin: 20px;
+}
+
+/* The above code is defining the CSS styles for a container element with the class "container4". */
+.container4{
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    align-items: center;
+    justify-content: center;
+    /* margin: auto; */
+    overflow: auto;
+    /* overflow-y: scroll; */
+}
+
+/* The above code is defining a CSS class called "ann". This class is using flexbox properties to
+center its child elements both vertically and horizontally within a container. The flex-direction
+property is set to "column", which means the child elements will be stacked vertically. The
+justify-content property is set to "center", which centers the child elements vertically within the
+container. The align-items property is set to "center", which centers the child elements
+horizontally within the container. */
+.ann{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* The above code is defining the CSS styles for a card element with the class name "card1". */
+.card1{
+    width: 62%;
+    height: 13rem;
+    display: flex;
+    /* background-color: white; */
+    /* background: transparent; */
+    backdrop-filter: blur(10px);
+    outline: transparent;
+    /* border: 2px solid black; */
+    flex-direction: column;
+    border-radius: 12px;
+    border-right: 10px solid #0000002e;
+    border-bottom: 10px solid #00000021;
+    border-top: 10px solid #00000021;
+    margin: 6px;;
+}
+
+/* The above code is defining a CSS class called ".Annoc". This class is being used to style elements
+in an HTML document. */
+.Annoc{
+    font-size: 20px;
+    margin: 10px;
+    font-weight: bolder;
+    display: flex;
+    position: relative;
+    right: 49px;
+}
+
+/* The above code is defining a CSS class called "Trending". It sets the font size to 20 pixels, adds a
+margin of 10 pixels, makes the font weight bolder, and sets the display property to flex. It also
+positions the element relatively and moves it 76 pixels to the right. */
+.Trending{
+    font-size: 20px;
+    margin: 10px;
+    font-weight: bolder;
+    display: flex;
+    position: relative;
+    right: 76px;
+}
+
+/* The above code is defining a CSS class called "project-name1". This class is being used to style an
+element on a webpage. The styling includes setting the display property to flex, setting the font
+size to 29 pixels, specifying the font family as Arial, Helvetica, sans-serif, setting the font
+weight to bolder, and adding a margin of 20 pixels. */
+.project-name1{
+    display: flex;
+    font-size: 29px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    margin: 20px;
+}
+
+/* The above code is defining a CSS class called "project-info1". It sets the display property to
+"flex", which means the elements with this class will be displayed as a flexible box. It also sets
+the margin property to 20px, which adds a margin of 20 pixels around the elements with this class.
+Additionally, it sets the margin-top property to 2px, which adds a margin of 2 pixels to the top of
+the elements with this class. */
+.project-info1{
+    display: flex;
+    margin: 20px;
+    margin-top: 2px;
+}
