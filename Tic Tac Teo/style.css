@@ -1,0 +1,279 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Black Ops One', cursive;
+}
+
+body{
+    background-image: url(backwall.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    /* -moz-box-shadow: 10px 10px 5px #ccc;
+    -webkit-box-shadow: 10px 10px 5px #ccc;
+    -khtml-box-shadow: 10px 10px 5px #ccc; */
+    /* background-image:linear-gradient(to left,#00000033 , #000000); */
+}
+
+#h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* font-size: 30px; */
+    color: white;
+    text-shadow: 2px 2px 4px #c75757;
+}
+
+#h1 h1{
+    font-size: 50px;
+    display: flex;
+}
+
+
+.container{
+    width: 100%;
+    height: 50vh;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+#gameboard{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 32%;
+    height: 300px;
+}
+
+.square{
+    display: flex;
+    flex-wrap: wrap;
+    float: left;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    height: 33%;
+    font-size: 88px;
+    color: white;
+}
+
+/* #square:focus{
+    animation: shake 0.3s;
+} */
+
+#square-0{
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+}
+
+#square-0:active{
+    animation: shake 0.3s;
+}
+
+#square-1{
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+    border-right: 2px solid white;
+}
+
+#square-1:active{
+    animation: shake 0.3s;
+}
+
+#square-2{
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+}
+
+#square-2:active{
+    animation: shake 0.3s;
+}
+
+#square-3{
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+}
+
+#square-3:active{
+    animation: shake 0.3s;
+}
+
+#square-4{
+    /* border-left: 2px solid white; */
+    border-bottom: 2px solid white;
+}
+
+#square-4:active{
+    animation: shake 0.3s;
+}
+
+#square-5{
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+}
+
+#square-5:active{
+    animation: shake 0.3s;
+}
+
+#square-6{
+    border-right: 2px solid white;
+    /* border-bottom: 2px solid rgb(255, 0, 0); */
+}
+
+#square-6:active{
+    animation: shake 0.3s;
+}
+
+#square-7{
+    /* border-left: 2px solid white;
+    border-bottom: 2px solid rgb(255, 0, 0); */
+}
+
+#square-7:active{
+    animation: shake 0.3s;
+}
+
+#square-8{
+    border-left: 2px solid white;
+    /* border-bottom: 2px solid rgb(255, 0, 0); */
+}
+
+#square-8:active{
+    animation: shake 0.3s;
+}
+
+
+#controls{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#player1{
+    display: flex;
+    background: transparent;
+    box-shadow: 0 0 10px rgb(226, 225, 225);
+    outline: transparent;
+    border: none;
+    margin: 10px;
+    width: 191px;
+    height: 33px;
+    border-radius: 20px;
+}
+
+#controls input{
+    display: flex;
+    padding-left: 10px;
+    color: white;
+}
+
+#player1::placeholder{
+    padding: 20px 20px 20px 20px;
+    color: white;
+}
+
+#player1:focus{
+    border: blue;
+    animation: shake 0.3s;
+}
+
+#player2{
+    display: flex;
+    background: transparent;
+    box-shadow: 0 0 10px rgb(237, 231, 231);
+    outline: transparent;
+    border: none;
+    margin: 10px;
+    width: 191px;
+    height: 33px;
+    border-radius: 20px;
+}
+
+
+#player2::placeholder{
+    padding: 20px 20px 20px 20px;
+    color: white;
+}
+#player2:focus{
+    border: blue;
+    animation: shake 0.3s;
+}
+
+@keyframes shake{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.05);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+#start-button{
+    width: 77px;
+    height: 34px;
+    border-radius: 20px;
+    display: flex;
+    background: transparent;
+    outline: transparent;
+    border: none;
+    box-shadow: 0 0 10px rgb(229, 226, 226);
+    color: white;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+#start-button:focus{
+    animation: shake 0.3s;
+}
+
+#restart-button{
+    width: 77px;
+    height: 34px;
+    border-radius: 20px;
+    display: flex;
+    background: transparent;
+    outline: transparent;
+    border: none;
+    box-shadow: 0 0 10px rgb(233, 229, 229);
+    color: white;
+    align-items: center;
+    justify-content: center;
+}
+
+#restart-button:focus{
+    animation: shake 0.3s;
+}
+
+#message{
+    position: relative;
+    top: 57px;
+    color: white;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: growText 3s ease-in-out infinite alternate; 
+}
+
+
+
+
+@keyframes growText {
+    0% {
+        font-size: 20px; /* Starting font size */
+    }
+    100% {
+        font-size: 40px; /* Ending font size */
+    }
+}
