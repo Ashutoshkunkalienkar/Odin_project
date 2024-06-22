@@ -8,16 +8,10 @@ function mobileMenu() {
     navMenu.classList.toggle("active");
 }
 
-// Inside the Media Query.
-
-// .hamburger.active .bar:nth-child(2) {
-//     opacity: 0;
-// }
-
-// .hamburger.active .bar:nth-child(1) {
-//     transform: translateY(8px) rotate(45deg);
-// }
-
-// .hamburger.active .bar:nth-child(3) {
-//     transform: translateY(-8px) rotate(-45deg);
-// }
+//auto type
+let typed = new Typed(".auto-type",{
+    strings : ["Web Developer",  "Front-end Developer"],
+    typeSpeed :150,
+    backSpeed :150,
+    loop :true
+})
