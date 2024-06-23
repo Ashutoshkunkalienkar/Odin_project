@@ -1,30 +1,31 @@
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
+const navLinks = document.querySelectorAll(".nav-menu li"); // Select all the menu items
 
 hamburger.addEventListener("click", mobileMenu);
-
 
 function mobileMenu() {
     hamburger.classList.toggle("active");
     navMenu.classList.toggle("active");
 }
 
+// Add click event listener to each menu item
+navLinks.forEach(link => link.addEventListener("click", closeMenu));
 
-function myFunction() {
-    var x = document.getElementsByClassName("nav-menu active");
-    if (x.style.display === "block") {
-      x.style.display = "none";
-    } else {
-      x.style.display = "block";
-    }
-  }
+function closeMenu() {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+}
+
+
+
 
 
 //auto type
 let typed = new Typed(".auto-type",{
     strings : [" Web Developer",  "Front-End Developer"],
-    typeSpeed :150,
-    backSpeed :150,
+    typeSpeed :100,
+    backSpeed :100,
     loop :true
 })
 

@@ -40,7 +40,6 @@ a {
 }
 
 .header{
-    /* background-color:  rgb(0 0 0 / 71%); */
     background-color: black;
 }
 
@@ -63,7 +62,6 @@ a {
     margin: 5px auto;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
-    /* background-color: #101010; */
     background-color: white;
 }
 
@@ -81,17 +79,23 @@ a {
     font-size: 1.5rem;
     font-weight: 400;
     color: #ffffff;
-    /* color: whitesmoke; */
     font-family: "Playfair Display", serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
 }
 
+@media only screen and (max-width: 730px){
+    .nav-link{
+        color: black;
+    }
+}
+
 
 .nav-link:hover{
     color: wheat;
 }
+
 
 .nav-logo {
     font-size: 2.1rem;
@@ -183,7 +187,6 @@ a {
 h1{
     color: #fff;
     font-size: 22px;
-    /* padding-left: 3.5rem; */
     width: 100%;
     display: flex;
     align-items: center;
@@ -248,8 +251,6 @@ span{
     box-sizing: content-box;
     border-radius: 40%;
     padding-top: 50px;
-    /* backdrop-filter: blur(4x);
-    box-shadow:0px 0px 30px rgb(0 0 0 / 37%); */
 }
 
 
@@ -280,6 +281,7 @@ span{
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    background-color: black;
 }
 
 
@@ -287,8 +289,8 @@ span{
 
 .card{
     width: 59%;
-    height: 58%;
-    border: 2px solid black;
+    height: auto;
+    border: 2px solid rgb(255, 255, 255);
     border-radius: 15px;
     margin: 1rem 1.1rem;
     align-items: center;
@@ -309,7 +311,7 @@ span{
 
 @media only screen and (max-width: 730px){
     #Project{
-        height: 298vh;
+        height: 251vh;
         padding: 0px;
         margin: 0px;
         display: flex;
@@ -320,7 +322,7 @@ span{
 @media only screen and (max-width: 730px){
     .card{ 
         width: 85%;
-        height: 100%;
+        height: auto;
         padding: 0px;
         margin: 1rem 1.1rem;
         display: flex;
@@ -329,4 +331,30 @@ span{
         align-items: center;
         justify-content: center;
     }
+}
+
+
+.TTT{
+    font-size: 20px;
+    color: white;
+}
+
+.TT1 {
+    font-size: 15px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+    color: white;
+    /* border: 2px solid black; */
+}
+
+.bttn{
+    border: none;
+    width: 10rem;
+    height: 40px;
+    border-radius: 10px;
+    margin: 1rem 1rem;
+    color: white;
+    background-color: transparent;
 }
