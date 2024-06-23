@@ -10,10 +10,19 @@ function mobileMenu() {
 }
 
 
+function myFunction() {
+    var x = document.getElementsByClassName("nav-menu active");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
+
 
 //auto type
 let typed = new Typed(".auto-type",{
-    strings : ["Web Developer",  "Front-end Developer"],
+    strings : [" Web Developer",  "Front-End Developer"],
     typeSpeed :150,
     backSpeed :150,
     loop :true
@@ -34,3 +43,5 @@ document.documentElement.style.setProperty(
     "--scroll-padding",
     navigationHeight1 + "px"
 );
+
+
