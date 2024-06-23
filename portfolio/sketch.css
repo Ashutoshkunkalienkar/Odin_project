@@ -1,0 +1,88 @@
+ /* The CSS code `body{ /* background-image: url(background.jpg);  display: flex; flex-direction:
+column; align-items: center; width: 100%;  height: 100vh; margin: 0; }` is styling the `body`
+element of an HTML document. */
+body{
+    /* background-image: url(background.jpg); */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* width: 100%; */
+    height: 100vh;
+    margin: 0;
+}
+
+/* The CSS code `h1{ margin-left: 79px; }` is styling the `h1` element in the HTML document. It sets
+the left margin of the `h1` element to 79 pixels. This will create a space of 79 pixels on the left
+side of the `h1` element. */
+h1{
+    margin-left: 79px;
+}
+
+
+/* The `#container` CSS code is styling an element with the ID "container". */
+#container{
+    /* width: 100%; */
+    /* height: 100vh; */
+    align-items: center;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+    grid-row: 0px;
+    grid-column: 0px;
+    border: 1px inherit;
+    border: 2px solid black;
+}
+
+/* The `.grid-item` CSS code is styling an element with the class "grid-item". It sets the width and
+height of the element to 25 pixels, and sets the background color to white. The `transition`
+property is used to specify the duration and timing function for the transition effect when the
+background color of the element changes. In this case, the background color will transition smoothly
+over a duration of 0.2 seconds. */
+.grid-item{
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    /* border: 1px solid black; */
+    transition: background-color 0.2s;
+}
+
+/* The CSS code `#text{ display: none; }` is targeting an element with the ID "text" and setting its
+display property to "none". This means that the element will not be displayed on the webpage. */
+#text{
+    display: none;
+}
+
+/* The CSS code `#parent{ display: flex; width: 40%; height: 611px; align-items: center;
+justify-content: center; }` is styling an element with the ID "parent". */
+#parent{
+    display: flex;
+    width: 40%;
+    height: 611px;
+    /* justify-content: space-between; */
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+/* The CSS code `#colorPicker , #color{ margin: 20px; display: flex; line-height: 0px; }` is targeting
+elements with the IDs "colorPicker" and "color". It sets a margin of 20 pixels around these
+elements, making them have some space around them. The `display: flex;` property is used to make the
+elements behave as flex containers, allowing their child elements to be aligned and positioned
+easily. The `line-height: 0px;` property sets the height of the line boxes within these elements to
+0 pixels, effectively removing any vertical spacing between the lines of text within the elements. */
+#colorPicker , #color{ 
+    margin: 20px;
+    display: flex;
+    line-height: 0px;
+}
+
+/* The CSS code `#eraser{ display: flex; margin: 20px ;}` is targeting an element with the ID "eraser"
+and setting its display property to "flex". This means that the element will behave as a flex
+container, allowing its child elements to be aligned and positioned easily. The `margin: 20px;`
+property sets a margin of 20 pixels around the element, creating some space around it. */
+#eraser{
+    display: flex;
+    margin: 20px ;
+}
