@@ -46,3 +46,26 @@ document.documentElement.style.setProperty(
 );
 
 
+
+//scrooling animation
+const observer = new IntersectionObserver((entries) =>{
+    entries.forEach((entry) =>{
+    console.log(entry)
+    if(entry.isIntersecting){
+        entry.target.classList.add('show');
+    }else{
+        entry.target.classList.remove('show');
+    }
+    });
+});
+
+
+const ProjectElements = document.querySelectorAll('.home-content')
+ProjectElements.forEach((el) => observer.observe(el));
+
+const homeElements = document.querySelectorAll('.home-pic')
+homeElements.forEach((el) => observer.observe(el));
+
+const aboutElements = document.querySelectorAll('.aboutme')
+aboutElements.forEach((el) => observer.observe(el));
+
