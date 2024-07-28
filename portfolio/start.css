@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    opacity: 1;
+    transition: opacity 1s ease-out;
+}
+
+body.fade-out {
+    opacity: 0;
+}
+
+#container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+h1{
+    color: #000000;
+    font-size: 22px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+span{
+    color: rgb(243 119 0);
+    font-size: 30px;
+}
+
+@media only screen and (max-width:730px){
+    #container{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
