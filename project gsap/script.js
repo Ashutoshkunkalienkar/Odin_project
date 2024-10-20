@@ -1,5 +1,30 @@
 var cursor = document.querySelector("#cursor")
 var parent = document.querySelector("#parent")
+var card1 = document.querySelector(".card1.left.line1")
+var card2 = document.querySelector(".card1.right.line2")
+var card3 = document.querySelector(".card1.left.line3")
+var card4 = document.querySelector(".card1.right.line4")
+
+function loaderAnimation()
+{
+    var tl3 = gsap.timeline()
+
+        tl3.to("#loadertext img",{
+            rotate:360,
+            duration:1,
+            y:-150
+        },'a')
+
+        tl3.to("#loadertext",{
+            width:"100%",
+        },'a')
+
+        tl3.to("#loader",{
+            opacity:0,
+            
+        })
+    
+}
 
 parent.addEventListener("mousemove",(e)=>{
     gsap.to(cursor,{
@@ -11,19 +36,15 @@ parent.addEventListener("mousemove",(e)=>{
     })
 } )
 
-
-
-
-
-
 function animationMain1(){
     var tl = gsap.timeline()
 
 tl.from("#logo img",{
-    opacity:0,
-    duration:0.3,
-    delay:0.4,
-    y:-50
+    // opacity:0,
+    duration:2,
+    // delay:0.2,
+    // y:-50
+    rotate:360,
 })
 
 tl.from("#logo h1",{
@@ -80,8 +101,6 @@ tl.from("#brands img",{
 })
 
 }
-
-
 function animationMain2(){
     var tl2 = gsap.timeline({
         scrollTrigger:{
@@ -123,10 +142,6 @@ function animationMain2(){
     },'a')
 }
 
-var card1 = document.querySelector(".card1.left.line1")
-var card2 = document.querySelector(".card1.right.line2")
-var card3 = document.querySelector(".card1.left.line3")
-var card4 = document.querySelector(".card1.right.line4")
 
 function cardZoom(){
     card1.addEventListener("mouseenter",()=>{
@@ -173,8 +188,7 @@ function cardZoom(){
         })
     })
 }
-
-
+loaderAnimation()
 animationMain1()
 animationMain2()
 cardZoom()
