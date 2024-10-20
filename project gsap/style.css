@@ -188,6 +188,8 @@ html,body{
     height: auto;
     /* mix-blend-mod: color-burn; */
     color: #111;
+    object-fit: cover;
+    /* mix-blend-mode: color-burn; */
 }
 
 
@@ -328,6 +330,7 @@ html,body{
     mix-blend-mode: color-burn;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
+    object-fit: cover;
 }
 
 #footer{

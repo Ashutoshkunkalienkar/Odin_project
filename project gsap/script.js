@@ -122,5 +122,58 @@ function animationMain2(){
 }
 
 
+var card1 = document.querySelector(".card1.left.line1")
+var card2 = document.querySelector(".card1.right.line2")
+var card3 = document.querySelector(".card1.left.line3")
+var card4 = document.querySelector(".card1.right.line4")
+
+function cardZoom(){
+    card1.addEventListener("mouseenter",()=>{
+        gsap.to(card1,{
+            scale:1.1
+        })
+    })
+    card1.addEventListener("mouseleave",()=>{
+        gsap.to(card1,{
+            scale:1
+        })
+    })
+
+    card2.addEventListener("mouseenter",()=>{
+        gsap.to(card2,{
+            scale:1.1
+        })
+    })
+    card2.addEventListener("mouseleave",()=>{
+        gsap.to(card2,{
+            scale:1
+        })
+    })
+
+    card3.addEventListener("mouseenter",()=>{
+        gsap.to(card3,{
+            scale:1.1
+        })
+    })
+    card3.addEventListener("mouseleave",()=>{
+        gsap.to(card3,{
+            scale:1
+        })
+    })
+
+    card4.addEventListener("mouseenter",()=>{
+        gsap.to(card4,{
+            scale:1.1
+        })
+    })
+    card4.addEventListener("mouseleave",()=>{
+        gsap.to(card4,{
+            scale:1
+        })
+    })
+}
+
+
 animationMain1()
 animationMain2()
+cardZoom()
