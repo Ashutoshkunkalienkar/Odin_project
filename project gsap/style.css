@@ -1,0 +1,391 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Indie+Flower&family=Kablammo:MORF@57&family=Kanit&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Space+Mono&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comfortaa:wght@300..700&family=Indie+Flower&family=Kablammo:MORF@57&family=Kanit&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Space+Mono&display=swap');
+
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    width: 100%;
+    height: 100vh;
+}
+
+#cursor{
+    width:10px;
+    height:10px;
+    border-radius: 100%;
+    background-color: #111;
+    position: fixed;
+    z-index: 8;
+    opacity: 0;
+}
+
+#parent{
+    width: 100%;
+    height: 100%;
+}
+
+#main{
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+}
+
+#navbar{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+}
+#logo{
+    display: inline-block;
+    overflow-y: hidden;
+    display: flex;
+    gap: 10px;
+
+}
+
+#logo h1{
+    color: #111;
+    font-family: "Comfortaa", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    cursor: pointer;
+}
+
+#logo img{
+    width: 40px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navlist{
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 3rem;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+#navlist span{
+    color: #111;
+    font-size: 1.2vw;
+    cursor: pointer;
+
+}
+
+#navlist button{
+    width: 8rem;
+    height:2rem;
+    border-radius: 10px;
+    border: 1px solid #111;
+    color: #111;
+    background: transparent;
+}
+
+
+#page1{
+    width: 100%;
+    height: 80%;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#pagePart1{
+    width: 40%;
+    height: 100%;
+    /* background-color: yellow; */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.text-1{
+    width: 100%;
+    height: 40%;
+    /* background-color: blue; */
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.text-1 h1{
+    font-size: 3vw;
+    line-height: 3.5rem;
+    color: #111;
+    font-family: "Space Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+    flex-shrink: 0;
+}
+
+.text-2{
+    width: 100%;
+    height: 60%;
+    /* background-color: green; */
+    padding-top: 30px;
+}
+
+
+
+.text-2 p{
+    width: 85%;
+    text-align: justify;
+    color: #111;
+    font: 1vw;
+    flex-shrink: 0;
+    padding-bottom: 2rem;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.text-2 button{
+    width:10rem;
+    height: 2.5rem;
+    background-color: transparent;
+    background-color: #111;
+    border:1px solid #111;
+    color: #ffffff;
+    border-radius: 10px;
+    font-family: "Space Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+    flex-shrink: 0;
+}
+
+#pagePart2{
+    width: 60%;
+    height: 100%;
+    /* background-color: rgb(0, 255, 51); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#pagePart2 img{
+    width: 60%;
+    height: auto;
+    /* mix-blend-mod: color-burn; */
+    color: #111;
+}
+
+
+#brands{
+    width: 100%;
+    height: 10%;
+    /* background-color: yellow; */
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* flex-direction: row; */
+    padding: 20px;
+    overflow-y: hidden;
+}
+
+#brands img{
+    width: 8rem;
+    height:4rem;
+    font-size: 30px;
+    /* border: 2px solid black; */
+    /* z-index: 8; */
+}
+
+#main2{
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+}
+
+.service{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 20px;
+}
+
+.service h1{
+    background-color: greenyellow;
+    font-family: "Comfortaa", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.service p{
+    width: 50%;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 13px;
+}
+
+#cardSection{
+    width: 100%;
+    height: 100%;
+    /* background-color: #00ff9d; */
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+    gap: 50px;
+    padding: 10px 40px;
+}
+
+.card1{
+    width: 40%;
+    height: 30vh;
+    /* background-color: rgb(225, 255, 0); */
+    display: flex;
+    align-items: center;
+    border: 2px solid #111;
+    border-radius: 15px;
+    /* gap: 30px; */
+}
+
+.cardPart1{
+    padding: 20px;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    /* gap: 30px; */
+    flex-direction: column;
+    /* background-color: #3300ff; */
+}
+
+.cardPart1 h1{
+    font-family: "Space Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
+}
+
+.view{
+    padding-top: 2.5vw;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* justify-content: center; */
+}
+
+.view i{
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    background-color: black;
+    color: white;
+    font-size: 1vw;
+    transform: rotate(-15deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.view h2{
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 18px;
+}
+
+.cardPart2{
+    width: 50%;
+    height: 100%;
+}
+
+.cardPart2 img{
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: color-burn;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+#footer{
+    width: 100%;
+    height: 20%;
+    background-color: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+.icons{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* flex-direction: column; */
+    gap: 80px;
+}
+
+.icons i{
+    color: #111;
+    font-size:1.4vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: #fff;
+}
+
+.footerText{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footerText p{
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.footerText span{
+    font-size: 1.2vw;
+    font-family: "Space Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
