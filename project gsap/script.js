@@ -21,42 +21,43 @@ function animationMain1(){
 
 tl.from("#logo img",{
     opacity:0,
-    duration:0.5,
+    duration:0.3,
     delay:0.4,
     y:-50
 })
 
 tl.from("#logo h1",{
     opacity:0,
-    duration:0.5,
-    y:-50
+    duration:0.3,
+    y:-50,
 })
 
 tl.from("#navlist span",{
     opacity:0,
-    duration:0.5,
+    duration:0.3,
     y:-50,
     stagger:0.2
 })
 
 tl.from("#navlist button",{
     opacity:0,
-    duration:0.5,
+    duration:0.3,
     y:-100
 })
 
 
-tl.from(".text-1",{
+tl.from(".text-1 h1",{
     opacity:0,
-    duration:0.5,
-    x:-100
+    duration:0.3,
+    x:-100,
+    stagger:0.2,
 })
 
 
 tl.from(".text-2 p",{
     opacity:0,
     duration:0.3,
-    x:-100
+    x:-100,
 }, 'ab')
 
 tl.from("#pagePart2 img",{
@@ -79,6 +80,7 @@ tl.from("#brands img",{
 })
 
 }
+
 
 function animationMain2(){
     var tl2 = gsap.timeline({
@@ -120,7 +122,6 @@ function animationMain2(){
         opacity:0,
     },'a')
 }
-
 
 var card1 = document.querySelector(".card1.left.line1")
 var card2 = document.querySelector(".card1.right.line2")
