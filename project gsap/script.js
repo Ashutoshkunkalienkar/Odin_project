@@ -24,20 +24,24 @@ function loaderAnimation()
 
         tl3.to("#loader",{
             opacity:0,
+            y:"-100%"
             
         })
     
 }
 
-parent.addEventListener("mousemove",(e)=>{
-    gsap.to(cursor,{
-        x:e.x,
-        y:e.y,
-        opacity:1,
-        duration:0.5,
-        ease:"back.out(1.7)"
-    })
-} )
+function cursorAnimation(){
+    parent.addEventListener("mousemove",(e)=>{
+        // console.log(e)
+        gsap.to(cursor,{
+            x:e.clientX,
+            y:e.clientY,
+            opacity:1,
+            duration:0.5,
+            ease:"back.out(1.7)"
+        })
+    } )
+}
 
 function animationMain1(){
     var tl = gsap.timeline()
@@ -145,6 +149,85 @@ function animationMain2(){
     },'a')
 }
 
+function cardDetails()
+{
+    card1.addEventListener("mouseenter",()=>{
+        gsap.to(cursor,{
+            width:"15rem",
+            height:"20rem",
+            borderRadius:"0%",
+            backgroundImage:"url(https://img.freepik.com/premium-photo/woman-working-laptop-with-colorful-abstract-background_1060494-16758.jpg?w=900)",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+        })
+    })
+    card1.addEventListener("mouseleave",()=>{
+        gsap.to(cursor,{
+            width:"10px",
+            height:"10px",
+            borderRadius:"100%",
+            backgroundImage:"none"
+        })
+    })
+    card2.addEventListener("mouseenter",()=>{
+        gsap.to(cursor,{
+            width:"15rem",
+            height:"20rem",
+            borderRadius:"0%",
+            backgroundImage:"url(https://img.freepik.com/premium-photo/programmer-tapped-computer_300636-6120.jpg?w=740)",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+        })
+    })
+    card2.addEventListener("mouseleave",()=>{
+        gsap.to(cursor,{
+            width:"10px",
+            height:"10px",
+            borderRadius:"100%",
+            backgroundImage:"none"
+        })
+    })
+    card3.addEventListener("mouseenter",()=>{
+        gsap.to(cursor,{
+            width:"15rem",
+            height:"20rem",
+            borderRadius:"0%",
+            backgroundImage:"url(https://img.freepik.com/premium-photo/woman-studying-data-charts_1326522-4612.jpg?w=740)",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+        })
+    })
+    card3.addEventListener("mouseleave",()=>{
+        gsap.to(cursor,{
+            width:"10px",
+            height:"10px",
+            borderRadius:"100%",
+            backgroundImage:"none"
+        })
+    })
+    card4.addEventListener("mouseenter",()=>{
+        gsap.to(cursor,{
+            width:"15rem",
+            height:"20rem",
+            borderRadius:"0%",
+            backgroundImage:"url(https://img.freepik.com/premium-photo/person-holding-gadget_1054941-49045.jpg?w=740)",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+        })
+    })
+    card4.addEventListener("mouseleave",()=>{
+        gsap.to(cursor,{
+            width:"10px",
+            height:"10px",
+            borderRadius:"100%",
+            backgroundImage:"none"
+        })
+    })
+}
 
 function cardZoom(){
     card1.addEventListener("mouseenter",()=>{
@@ -192,6 +275,8 @@ function cardZoom(){
     })
 }
 loaderAnimation()
+cursorAnimation()
 animationMain1()
 animationMain2()
+// cardDetails()
 cardZoom()

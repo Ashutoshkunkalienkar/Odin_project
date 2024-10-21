@@ -1,11 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Indie+Flower&family=Kablammo:MORF@57&family=Kanit&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Space+Mono&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comfortaa:wght@300..700&family=Indie+Flower&family=Kablammo:MORF@57&family=Kanit&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Space+Mono&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comfortaa:wght@300..700&family=Indie+Flower&family=Kablammo:MORF@57&family=Kanit&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Space+Mono&display=swap'); */
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comfortaa:wght@700&family=Eater&family=Geostar+Fill&family=Indie+Flower&family=Kablammo:MORF@57&family=Kanit&family=Londrina+Sketch&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,600;1,600&family=Rubik+Vinyl&family=Slackey&family=Space+Mono:ital,wght@1,700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Pompiere&family=Shojumaru&display=swap');
+
 @import url('https://fonts.googleapis.com/css2?family=Kavoon&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Grenze:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Iceland&family=Ojuju:wght@200..800&family=Pompiere&family=Shojumaru&display=swap');
 *{
     padding: 0;
     margin: 0;
@@ -22,7 +25,7 @@ html,body{
     height: 100vh;
     position: fixed;
     background-color: rgb(255, 255, 255);
-    z-index: 10;
+    z-index: 16;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -46,7 +49,9 @@ html,body{
     font-family: "Kavoon", serif;
     font-weight: 400;
     font-style: normal;
+    z-index: 5;
 }
+
 
 
 #loadertext img{
@@ -60,24 +65,6 @@ html,body{
     z-index: 12;
 } 
 
-/* #white{
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    background-color: rgb(255, 255, 255);
-    z-index: 11;
-}
-
-#white img{
-    position: absolute;
-    width: 15rem;
-    height: 15rem;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    mix-blend-mode: multiply;
-} */
-
 
 
 #cursor{
@@ -85,14 +72,19 @@ html,body{
     height:10px;
     border-radius: 100%;
     background-color: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: fixed;
-    z-index: 8;
+    z-index: 14;
     opacity: 0;
 }
 
 #parent{
     width: 100%;
     height: 100%;
+    position: absolute;
+    z-index: 13;
 }
 
 #main{
@@ -119,9 +111,8 @@ html,body{
 
 #logo h1{
     color: #111;
-    font-family: "Comfortaa", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 700;
+    font-family: "Kavoon", serif;
+    font-weight: 400;
     font-style: normal;
     cursor: pointer;
 }
@@ -149,6 +140,9 @@ html,body{
     font-size: 1.2vw;
     cursor: pointer;
     z-index: 9;
+    font-family: "Iceland", sans-serif;
+    font-weight: 600;
+    font-style: normal;
 
 }
 
@@ -159,6 +153,9 @@ html,body{
     border: 1px solid #111;
     color: #111;
     background: transparent;
+    font-family: "Iceland", sans-serif;
+    font-weight: 600;
+    font-style: normal;
 }
 
 
@@ -214,12 +211,11 @@ html,body{
     width: 85%;
     text-align: justify;
     color: #111;
-    font: 1vw;
+    font-size: 1.4vw;
     flex-shrink: 0;
     padding-bottom: 2rem;
-    font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
+    font-family: "Pompiere", sans-serif;
+    font-weight: 500;
     font-style: normal;
 }
 
@@ -299,11 +295,10 @@ html,body{
 
 .service p{
     width: 50%;
-    font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
+    font-family: "Pompiere", sans-serif;
     font-weight: 500;
     font-style: normal;
-    font-size: 13px;
+    font-size: 20px;
 }
 
 #cardSection{
@@ -318,6 +313,7 @@ html,body{
     padding: 10px 40px;
 }
 
+
 .card1{
     width: 40%;
     height: 30vh;
@@ -325,7 +321,10 @@ html,body{
     align-items: center;
     border: 2px solid #111;
     border-radius: 15px;
+    position: relative;
 }
+
+
 
 .cardPart1{
     padding: 20px;
