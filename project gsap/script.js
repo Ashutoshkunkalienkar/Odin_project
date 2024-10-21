@@ -12,11 +12,14 @@ function loaderAnimation()
         tl3.to("#loadertext img",{
             rotate:360,
             duration:1,
-            y:-150
+            y:-150,
+            opacity:1,
         },'a')
 
-        tl3.to("#loadertext",{
-            width:"100%",
+        tl3.from("#loadertext",{
+            width:"0%",
+            duration:1,
+            opacity:0,
         },'a')
 
         tl3.to("#loader",{

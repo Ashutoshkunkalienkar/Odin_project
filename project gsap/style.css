@@ -4,6 +4,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comfortaa:wght@700&family=Eater&family=Geostar+Fill&family=Indie+Flower&family=Kablammo:MORF@57&family=Kanit&family=Londrina+Sketch&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,600;1,600&family=Rubik+Vinyl&family=Slackey&family=Space+Mono:ital,wght@1,700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Kavoon&display=swap');
 
 *{
     padding: 0;
@@ -28,8 +29,8 @@ html,body{
     /* gap:10px; */
 }
 #loadertext{
-    width: 0%;
-    height: 10vh;
+    width: 100%;
+    height: 13vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -41,8 +42,9 @@ html,body{
     width: 10%;
     font-size: 7vw;
     text-align: center;
-    /* gap: 50px; */
-    /* word-spacing: 100px; */
+    font-family: "Kavoon", serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 
@@ -53,7 +55,7 @@ html,body{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    mix-blend-mode: multiply;
+    mix-blend-mode:multiply;
     z-index: 12;
 } 
 
