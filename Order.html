@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <title>Order Page</title>
+</head>
+
+<body style="overflow-x: hidden;">
+    <div class="navbar">
+        <div class="logo">
+            <i class="fas fa-spa"></i>
+            <span>FloraXpress</span>
+        </div>
+        <div class="navlist">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li>
+                    <!-- <select name="product" id="product">
+                            <option value="product">Product</option>
+                            <option value="product1">product1</option>
+                            <option value="product2">product2</option>
+                        </select> -->
+                    <a href="Order.html">Orders</a>
+                </li>
+                <li>
+                    <select name="page" id="page">
+                        <option value="page1">page1</option>
+                        <option value="page2">page2</option>
+                        <option value="page3">page3</option>
+                    </select>
+                </li>
+            </ul>
+        </div>
+        <div class="icons">
+            <input type="text" id="search-bar" class="search-bar-inline" placeholder="Search..."
+                style="display:none;" />
+            <i class="fas fa-search" id="search-toggle"></i>
+
+            <script>
+        // Inline search bar toggle for navbar
+        const searchIcon = document.getElementById('search-toggle');
+        const searchBar = document.getElementById('search-bar');
+        let searchOpen = false;
+        searchIcon.addEventListener('click', function () {
+            searchOpen = !searchOpen;
+            if (searchOpen) {
+                searchBar.style.display = 'inline-block';
+                searchBar.classList.add('search-bar-inline-animate-in');
+                searchBar.focus();
+            } else {
+                searchBar.classList.remove('search-bar-inline-animate-in');
+                searchBar.style.display = 'none';
+            }
+        });
+        // Optional: Hide search bar on pressing Escape
+        searchBar.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                searchOpen = false;
+                searchBar.classList.remove('search-bar-inline-animate-in');
+                searchBar.style.display = 'none';
+            }
+        });
+    </script>
+
+            <a href="login.html"><i class="fas fa-user"></i></a>
+                <a href="wishlist.html"><i class="fas fa-heart"></i></a>
+            <a href="Cart.html"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+    </div>
+
+    <div class="order_container">
+        <h1>Your Orders</h1>
+        <p>Here you can view your past orders and their details.</p>
+
+        <div class="order-cards">
+            <div class="order-card">
+                <img src="https://images.pexels.com/photos/2959192/pexels-photo-2959192.jpeg" alt="Order Image" />
+                <h3>Order #12345</h3>
+                <p class="order-date">Placed on: 2023-10-01</p>
+                <p class="order-total">Total Amount: $50.00</p>
+                <button class="view-details-btn" data-order-id="12345"
+                    data-img="https://images.pexels.com/photos/2959192/pexels-photo-2959192.jpeg"
+                    data-title="Order #12345" data-date="2023-10-01" data-total="$50.00">View Details</button>
+            </div>
+            <!-- Example: Add more order cards below as needed, just update the data attributes -->
+            <div class="order-card">
+                <img src="https://images.pexels.com/photos/461382/pexels-photo-461382.jpeg" alt="Order Image" />
+                <h3>Order #12346</h3>
+                <p class="order-date">Placed on: 2023-10-10</p>
+                <p class="order-total">Total Amount: $75.00</p>
+                <button class="view-details-btn" data-order-id="12346"
+                    data-img="https://images.pexels.com/photos/461382/pexels-photo-461382.jpeg"
+                    data-title="Order #12346" data-date="2023-10-10" data-total="$75.00">View Details</button>
+            </div>
+            <!-- Add more order cards as needed, just update the data attributes -->
+        </div>
+
+
+        <!-- Order Details Modal -->
+        <div id="order-details-modal" class="order-modal">
+            <div class="order-modal-content order-modal-square">
+                <span class="order-modal-close">&times;</span>
+                <img src="" alt="Order Image" class="order-modal-img" id="modal-order-img" />
+                <h2 id="modal-order-title"></h2>
+                <p><strong>Date:</strong> <span id="modal-order-date"></span></p>
+                <p><strong>Total:</strong> <span id="modal-order-total"></span></p>
+                <p id="modal-order-desc">Your bouquet was delivered with love! Thank you for shopping with FloraXpress.
+                    If you have any questions about your order, please contact our support team.</p>
+            </div>
+        </div>
+
+        <script>
+            // Modal logic for all order cards
+            const modal = document.getElementById('order-details-modal');
+            const modalImg = document.getElementById('modal-order-img');
+            const modalTitle = document.getElementById('modal-order-title');
+            const modalDate = document.getElementById('modal-order-date');
+            const modalTotal = document.getElementById('modal-order-total');
+            const closeBtn = document.querySelector('.order-modal-close');
+            const viewBtns = document.querySelectorAll('.view-details-btn');
+
+            viewBtns.forEach(btn => {
+                btn.onclick = function () {
+                    modalImg.src = btn.getAttribute('data-img');
+                    modalTitle.textContent = btn.getAttribute('data-title') + ' Details';
+                    modalDate.textContent = btn.getAttribute('data-date');
+                    modalTotal.textContent = btn.getAttribute('data-total');
+                    modal.style.display = 'flex';
+                    setTimeout(() => modal.classList.add('show'), 10);
+                }
+            });
+            if (closeBtn && modal) {
+                closeBtn.onclick = function () {
+                    modal.classList.remove('show');
+                    setTimeout(() => modal.style.display = 'none', 300);
+                }
+                window.onclick = function (event) {
+                    if (event.target === modal) {
+                        modal.classList.remove('show');
+                        setTimeout(() => modal.style.display = 'none', 300);
+                    }
+                }
+            }
+        </script>
+
+
+
+        <footer>
+        <div class="footer-content">
+            <p>&copy; 2023 Floral Haven. All rights reserved.</p>
+            <div class="social-icons">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-linkedin-in"></i>
+            </div>
+        </div>
+        <div class="footer-links">
+            <a href="Privacy_policy.html">Privacy Policy</a>
+            <a href="Terms_Services.html">Terms of Service</a>
+            <a href="Contact_us.html">Contact Us</a>
+            <a href="About_us.html">About Us</a>
+        </div>
+    </footer>
+</body>
+
+</html>
