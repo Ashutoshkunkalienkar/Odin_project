@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <title>Shop page</title>
+</head>
+
+<body class="shop-bg">
+
+    <div class="navbar">
+            <div class="logo">
+                <i class="fas fa-spa"></i>
+                <span>FloraXpress</span>
+            </div>
+            <div class="navlist">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li>
+                        <!-- <select name="product" id="product">
+                            <option value="product">Product</option>
+                            <option value="product1">product1</option>
+                            <option value="product2">product2</option>
+                        </select> -->
+                        <a href="Order.html">Orders</a>
+                    </li>
+                    <!-- <li>
+                        <select name="page" id="page">
+                            <option value="page1">page1</option>
+                            <option value="page2">page2</option>
+                            <option value="page3">page3</option>
+                        </select>
+                    </li> -->
+                </ul>
+            </div>
+            <div class="icons">
+                <input type="text" id="search-bar" class="search-bar-inline" placeholder="Search..."
+                    style="display:none;" />
+                <i class="fas fa-search" id="search-toggle"></i>
+
+<script>
+        // Inline search bar toggle for navbar
+        const searchIcon = document.getElementById('search-toggle');
+        const searchBar = document.getElementById('search-bar');
+        let searchOpen = false;
+        searchIcon.addEventListener('click', function () {
+            searchOpen = !searchOpen;
+            if (searchOpen) {
+                searchBar.style.display = 'inline-block';
+                searchBar.classList.add('search-bar-inline-animate-in');
+                searchBar.focus();
+            } else {
+                searchBar.classList.remove('search-bar-inline-animate-in');
+                searchBar.style.display = 'none';
+            }
+        });
+        // Optional: Hide search bar on pressing Escape
+        searchBar.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                searchOpen = false;
+                searchBar.classList.remove('search-bar-inline-animate-in');
+                searchBar.style.display = 'none';
+            }
+        });
+    </script>
+
+                <a href="login.html"><i class="fas fa-user"></i></a>
+                <a href="wishlist.html"><i class="fas fa-heart"></i></a>
+                <a href="Cart.html"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+        </div>
+
+
+
+    <h1 class="shop-title">Welcome to the Shop</h1>
+    <p class="shop-desc">Explore our range of products below:</p>
+    <div class="product-list">
+        <div class="product-item">
+            <img src="https://images.pexels.com/photos/1058771/pexels-photo-1058771.jpeg" alt="image"
+                class="product-img" data-title="Sunflowers"
+                data-desc="A beautiful bouquet of spring snowflakes, known for their delicate white petals and fresh fragrance. Perfect for brightening up any room or gifting to a loved one. These flowers symbolize hope and renewal."
+                data-price="$10.00">
+            <h2>Sunflowers</h2>
+            <p>Description of Sunflowers</p>
+            <p>Price: $10.00</p>
+            <button>Add to Cart</button>
+            <i class="fas fa-heart"></i>
+        </div>
+        <div class="product-item">
+            <img src="https://images.pexels.com/photos/4277099/pexels-photo-4277099.jpeg" alt="image"
+                class="product-img" data-title="Purple flowers"
+                data-desc="Scarlet Sage is admired for its vibrant red blooms and lush green leaves. This flower adds a pop of color to any bouquet and is often associated with passion and energy. Ideal for festive occasions and celebrations."
+                data-price="$15.00">
+            <h2>Purple flowers</h2>
+            <p>Description of Purple flowers</p>
+            <p>Price: $15.00</p>
+            <button>Add to Cart</button>
+            <i class="fas fa-heart"></i>
+
+        </div>
+        <div class="product-item">
+            <img src="https://images.pexels.com/photos/1053762/pexels-photo-1053762.jpeg" alt="image"
+                class="product-img" data-title="Foxglove"
+                data-desc="Foxglove flowers are known for their tall spikes and bell-shaped blossoms. Their unique appearance makes them a favorite among garden enthusiasts. Foxgloves symbolize creativity and inspiration."
+                data-price="$20.00">
+            <h2>Foxglove</h2>
+            <p>Description of Foxglove</p>
+            <p>Price: $20.00</p>
+            <button>Add to Cart</button>
+            <i class="fas fa-heart"></i>
+
+        </div>
+        <div class="product-item">
+            <img src="https://images.pexels.com/photos/1053762/pexels-photo-1053762.jpeg" alt="image"
+                class="product-img" data-title="Foxglove"
+                data-desc="Foxglove flowers are known for their tall spikes and bell-shaped blossoms. Their unique appearance makes them a favorite among garden enthusiasts. Foxgloves symbolize creativity and inspiration."
+                data-price="$20.00">
+            <h2>Foxglove</h2>
+            <p>Description of Foxglove</p>
+            <p>Price: $20.00</p>
+            <button>Add to Cart</button>
+            <i class="fas fa-heart"></i>
+
+        </div>
+        <div class="product-item">
+            <img src="https://images.pexels.com/photos/1053762/pexels-photo-1053762.jpeg" alt="image"
+                class="product-img" data-title="Product 4"
+                data-desc="Rose Bouquets are timeless and elegant, featuring lush, fragrant roses in full bloom. They are perfect for expressing love, admiration, or gratitude. Each bouquet is carefully arranged to create a stunning visual impact."
+                data-price="$25.00">
+            <h2>Product 4</h2>
+            <p>Description of Product 4</p>
+            <p>Price: $25.00</p>
+            <button>Add to Cart</button>
+            <i class="fas fa-heart"></i>
+
+        </div>
+        <!-- Modal for Product Image Popup -->
+        <div id="product-modal" class="product-modal">
+            <div class="product-modal-content">
+                <span class="product-modal-close">&times;</span>
+                <img id="modal-product-img" src="" alt="Product Image" />
+                <h2 id="modal-product-title"></h2>
+                <p id="modal-product-desc"></p>
+                <p id="modal-product-price" class="product-modal-price"></p>
+                <button id="modal-add-cart" class="modal-add-cart">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Modal for Expert Card Popup -->
+        <div id="expert-modal" class="product-modal">
+            <div class="product-modal-content">
+                <span class="product-modal-close">&times;</span>
+                <img id="modal-expert-img" src="" alt="Expert Image" />
+                <h2 id="modal-expert-title"></h2>
+                <p id="modal-expert-desc"></p>
+                <button id="modal-expert-add-cart" class="modal-add-cart">Add to Cart</button>
+            </div>
+        </div>
+
+        <script>
+            // Modal functionality for product images
+            document.querySelectorAll('.product-img').forEach(img => {
+                img.addEventListener('click', function () {
+                    document.getElementById('modal-product-title').textContent = this.getAttribute('data-title');
+                    document.getElementById('modal-product-desc').textContent = this.getAttribute('data-desc');
+                    document.getElementById('modal-product-price').textContent = 'Price: ' + this.getAttribute('data-price');
+                    document.getElementById('modal-product-img').src = this.src;
+                    document.getElementById('product-modal').style.display = 'flex';
+                    document.querySelector('#product-modal .product-modal-content').classList.remove('pop-in');
+                    void document.querySelector('#product-modal .product-modal-content').offsetWidth;
+                    document.querySelector('#product-modal .product-modal-content').classList.add('pop-in');
+                });
+            });
+            document.querySelector('#product-modal .product-modal-close').onclick = function () {
+                document.getElementById('product-modal').style.display = 'none';
+            };
+
+            // Modal functionality for expert cards
+            document.querySelectorAll('.expert-card').forEach(card => {
+                card.addEventListener('click', function () {
+                    const img = card.querySelector('img');
+                    const title = card.querySelector('h3');
+                    const desc = card.querySelector('p');
+                    document.getElementById('modal-expert-img').src = img ? img.src : '';
+                    document.getElementById('modal-expert-title').textContent = title ? title.textContent : '';
+                    document.getElementById('modal-expert-desc').textContent = desc ? desc.getAttribute('data-desc') || desc.textContent : '';
+                    document.getElementById('expert-modal').style.display = 'flex';
+                    document.querySelector('#expert-modal .product-modal-content').classList.remove('pop-in');
+                    void document.querySelector('#expert-modal .product-modal-content').offsetWidth;
+                    document.querySelector('#expert-modal .product-modal-content').classList.add('pop-in');
+                });
+            });
+            document.querySelector('#expert-modal .product-modal-close').onclick = function () {
+                document.getElementById('expert-modal').style.display = 'none';
+            };
+
+            // Close modals on outside click
+            window.onclick = function (event) {
+                if (event.target === document.getElementById('product-modal')) {
+                    document.getElementById('product-modal').style.display = 'none';
+                }
+                if (event.target === document.getElementById('expert-modal')) {
+                    document.getElementById('expert-modal').style.display = 'none';
+                }
+            };
+        </script>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2023 Floral Haven. All rights reserved.</p>
+            <div class="social-icons">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-linkedin-in"></i>
+            </div>
+        </div>
+        <div class="footer-links">
+            <a href="Privacy_policy.html">Privacy Policy</a>
+            <a href="Terms_Services.html">Terms of Service</a>
+            <a href="Contact_us.html">Contact Us</a>
+            <a href="About_us.html">About Us</a>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="backflower.jpg" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <title>Flower Shop</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <i class="fas fa-spa"></i>
+                <span>FloraXpress</span>
+            </div>
+            <div class="navlist">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li>
+                        <!-- <select name="product" id="product">
+                            <option value="product">Product</option>
+                            <option value="product1">product1</option>
+                            <option value="product2">product2</option>
+                        </select> -->
+                        <a href="Order.html">Orders</a>
+                    </li>
+                    <!-- <li>
+                        <select name="page" id="page">
+                            <option value="page1">page1</option>
+                            <option value="page2">page2</option>
+                            <option value="page3">page3</option>
+                        </select>
+                    </li> -->
+                </ul>
+            </div>
+            <div class="icons">
+                <input type="text" id="search-bar" class="search-bar-inline" placeholder="Search..."
+                    style="display:none;" />
+                <i class="fas fa-search" id="search-toggle"></i>
+                <a href="login.html"><i class="fas fa-user"></i></a>
+                <a href="wishlist.html"><i class="fas fa-heart"></i></a>
+                <a href="Cart.html"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+        </div>
+
+        <div class="maincontent">
+            <div class="content">
+                <p>| Hot Flowers</p>
+                <span>Fresh Flowers</span>
+                <span>For any occasion</span>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet
+                    dolores dolor, in, veniam vel necessitatibus odit fugit officiis,
+                    obcaecati tempore repellendus. Consequatur aut quas beatae
+                    veritatis. Velit maiores delectus rerum.
+                </p>
+
+                <a href="shop.html"><button>start shopping</button></a>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Inline search bar toggle for navbar
+        const searchIcon = document.getElementById('search-toggle');
+        const searchBar = document.getElementById('search-bar');
+        let searchOpen = false;
+        searchIcon.addEventListener('click', function () {
+            searchOpen = !searchOpen;
+            if (searchOpen) {
+                searchBar.style.display = 'inline-block';
+                searchBar.classList.add('search-bar-inline-animate-in');
+                searchBar.focus();
+            } else {
+                searchBar.classList.remove('search-bar-inline-animate-in');
+                searchBar.style.display = 'none';
+            }
+        });
+        // Optional: Hide search bar on pressing Escape
+        searchBar.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                searchOpen = false;
+                searchBar.classList.remove('search-bar-inline-animate-in');
+                searchBar.style.display = 'none';
+            }
+        });
+    </script>
+    <script src="product-popup.js"></script>
+
+    <div id="deals_of_day">
+        <span>Deal of the Day</span>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae eveniet
+            velit nisi dolor commodi alias assumenda quidem eligendi, vitae illum
+            accusamus, fugiat.
+        </p>
+        <div id="countdown-timer" class="countdown-timer"></div>
+        <div class="deals">
+            <div class="deal">
+                <div class="deal-content">
+                    <h3>Spring Snowflake</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <button>Buy Now</button>
+                </div>
+                <img src="https://images.pexels.com/photos/1058771/pexels-photo-1058771.jpeg" alt="Flower Image" />
+            </div>
+            <div class="deal">
+                <div class="deal-content">
+                    <h3>Scariet Sage</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <button>Buy Now</button>
+                </div>
+                <img src="https://images.pexels.com/photos/4277099/pexels-photo-4277099.jpeg" alt="Flower Image" />
+            </div>
+            <div class="deal">
+                <div class="deal-content">
+                    <h3>Foxglove Flower</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <button>Buy Now</button>
+                </div>
+                <img src="https://images.pexels.com/photos/1053762/pexels-photo-1053762.jpeg" alt="Flower Image" />
+            </div>
+
+            <!-- <a href="shop.html"><button>Shop Now</button></a> -->
+        </div>
+        <script>
+            // Countdown Timer for Deal of the Day
+            function initializeCountdown(targetDateStr, displayId) {
+                const display = document.getElementById(displayId);
+                // Set a future date for the countdown (e.g., 3 days from now)
+                const targetDate = new Date();
+                targetDate.setDate(targetDate.getDate() + 3);
+                function updateCountdown() {
+                    const now = new Date();
+                    let diff = targetDate - now;
+                    if (diff < 0) diff = 0;
+                    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+                    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+                    const seconds = Math.floor((diff / 1000) % 60);
+                    display.innerHTML =
+                        `<span class="cd-label">${days}d</span> : ` +
+                        `<span class="cd-label">${hours}h</span> : ` +
+                        `<span class="cd-label">${minutes}m</span> : ` +
+                        `<span class="cd-label">${seconds}s</span>`;
+                }
+                updateCountdown();
+                setInterval(updateCountdown, 1000);
+            }
+            initializeCountdown("", "countdown-timer");
+        </script>
+    </div>
+
+    <div id="sec_container">
+        <span>New product</span>
+        <p>
+            A perfect blend of creativity, energy, communication, happiness, and
+            love. Let's us arrange a smile for you!
+        </p>
+
+        <div class="cards">
+            <div class="card">
+                <img src="https://images.pexels.com/photos/1058771/pexels-photo-1058771.jpeg" alt="Flower Image" />
+                <h3>Orchid Flower</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <button>Buy Now</button>
+            </div>
+            <div class="card">
+                <img src="https://images.pexels.com/photos/4277099/pexels-photo-4277099.jpeg" alt="Flower Image" />
+                <h3>Rose Bouquet</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <button>Buy Now</button>
+            </div>
+            <div class="card">
+                <img src="https://images.pexels.com/photos/2831040/pexels-photo-2831040.jpeg" alt="Flower Image" />
+                <h3>jack in the pulpit</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <button>Buy Now</button>
+            </div>
+            <div class="card">
+                <img src="https://images.pexels.com/photos/2705618/pexels-photo-2705618.jpeg" alt="Flower Image" />
+                <h3>Rose Bouquet </h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <button>Buy Now</button>
+            </div>
+            <!-- <a href="shop.html"><button>Shop Now</button></a> -->
+
+        </div>
+    </div>
+
+    <div id="Folower_expt">
+        <span>Flower Expert</span>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae eveniet
+            velit nisi dolor commodi alias assumenda quidem eligendi, vitae illum
+            accusamus, fugiat.
+        </p>
+
+        <div class="expert-cards">
+            <div class="expert-card">
+                <img src="https://img.freepik.com/premium-photo/young-beautiful-woman-florist-make-bouquet-flowers-flower-shop_255667-54988.jpg?w=1060"
+                    alt="Expert Image" />
+                <h3>Marcos Alonso</h3>
+                <p>Biologist</p>
+            </div>
+            <div class="expert-card">
+                <img src="https://img.freepik.com/premium-photo/smiling-florist-standing-counter_107420-87104.jpg?w=1060"
+                    alt="Expert Image" />
+                <h3>Shara friken</h3>
+                <p>Photographer</p>
+            </div>
+            <div class="expert-card">
+                <img src="https://img.freepik.com/premium-photo/portrait-smiling-female-florist-standing-against-flowers-shop_1048944-27556058.jpg?w=1060"
+                    alt="Expert Image" />
+                <h3>Torvi greac</h3>
+                <p>Founder</p>
+            </div>
+            <div class="expert-card">
+                <img src="https://img.freepik.com/premium-photo/smiling-florist-arranging-colorful-bouquet_932138-31134.jpg?w=1060"
+                    alt="Expert Image" />
+                <h3>Alonso Gomej</h3>
+                <p>Florist</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="from_blog">
+        <span>From Our Blog</span>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae eveniet
+            velit nisi dolor commodi alias assumenda quidem eligendi, vitae illum
+            accusamus, fugiat.
+        </p>
+
+        <div class="blog-cards">
+            <div class="blog-card">
+                <img src="https://images.pexels.com/photos/542517/pexels-photo-542517.jpeg" alt="Blog Image" />
+                <h3>Flower Beauty</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <button class="read-more-btn" data-title="Flower Beauty"
+                    data-content="Experience the elegance and diversity of flowers from around the world. Discover their beauty, symbolism, and how they can brighten any space!"
+                    data-img="https://images.pexels.com/photos/542517/pexels-photo-542517.jpeg">Read More</button>
+            </div>
+            <div class="blog-card">
+                <img src="https://images.pexels.com/photos/2959192/pexels-photo-2959192.jpeg" alt="Blog Image" />
+                <h3>Local Florists</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <button class="read-more-btn" data-title="Local Florists"
+                    data-content="Discover the best local florists in your area, their unique arrangements, and how they bring color to your community. Learn about their stories, specialties, and tips for choosing the perfect bouquet!"
+                    data-img="https://images.pexels.com/photos/2959192/pexels-photo-2959192.jpeg">Read More</button>
+            </div>
+            <div class="blog-card">
+                <img src="https://images.pexels.com/photos/8298416/pexels-photo-8298416.jpeg" alt="Blog Image" />
+                <h3>Flower Power</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <button class="read-more-btn" data-title="Flower Power"
+                    data-content="Explore the influence of flowers in culture, art, and daily life. See how different blooms symbolize emotions and how you can use them to brighten any occasion."
+                    data-img="https://images.pexels.com/photos/8298416/pexels-photo-8298416.jpeg">Read More</button>
+            </div>
+            <!-- Modal for Read More (Blog Cards) -->
+            <div id="blog-modal" class="blog-modal">
+                <div class="blog-modal-content animated-pop">
+                    <span class="blog-modal-close">&times;</span>
+                    <img id="modal-img" src="" alt="Blog Image" />
+                    <h2 id="modal-title"></h2>
+                    <p id="modal-text"></p>
+                </div>
+            </div>
+            <script>
+                // Modal functionality for blog cards
+                document.querySelectorAll('.read-more-btn').forEach(btn => {
+                    btn.addEventListener('click', function () {
+                        document.getElementById('modal-title').textContent = this.getAttribute('data-title');
+                        document.getElementById('modal-text').textContent = this.getAttribute('data-content');
+                        document.getElementById('modal-img').src = this.getAttribute('data-img');
+                        document.getElementById('blog-modal').style.display = 'flex';
+                        // Animate pop-in
+                        document.querySelector('.blog-modal-content').classList.remove('pop-in');
+                        void document.querySelector('.blog-modal-content').offsetWidth;
+                        document.querySelector('.blog-modal-content').classList.add('pop-in');
+                    });
+                });
+                document.querySelector('.blog-modal-close').onclick = function () {
+                    document.getElementById('blog-modal').style.display = 'none';
+                };
+                window.onclick = function (event) {
+                    if (event.target === document.getElementById('blog-modal')) {
+                        document.getElementById('blog-modal').style.display = 'none';
+                    }
+                };
+            </script>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2023 Floral Haven. All rights reserved.</p>
+            <div class="social-icons">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-linkedin-in"></i>
+            </div>
+        </div>
+        <div class="footer-links">
+            <a href="Privacy_policy.html">Privacy Policy</a>
+            <a href="Terms_Services.html">Terms of Service</a>
+            <a href="Contact_us.html">Contact Us</a>
+            <a href="About_us.html">About Us</a>
+        </div>
+    </footer>
+
+
+    <script src="product-popup.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <title>Blog page</title>
+</head>
+
+<body>
+    <div class="navbar">
+            <div class="logo">
+                <i class="fas fa-spa"></i>
+                <span>FloraXpress</span>
+            </div>
+            <div class="navlist">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li>
+                        <!-- <select name="product" id="product">
+                            <option value="product">Product</option>
+                            <option value="product1">product1</option>
+                            <option value="product2">product2</option>
+                        </select> -->
+                        <a href="Order.html">Orders</a>
+                    </li>
+                    <!-- <li>
+                        <select name="page" id="page">
+                            <option value="page1">page1</option>
+                            <option value="page2">page2</option>
+                            <option value="page3">page3</option>
+                        </select>
+                    </li> -->
+                </ul>
+            </div>
+            <div class="icons">
+                <!-- <input type="text" id="search-bar" class="search-bar-inline" placeholder="Search..."
+                    style="display:none;" />
+                <i class="fas fa-search" id="search-toggle"></i> -->
+                <a href="login.html"><i class="fas fa-user"></i></a>
+                <a href="wishlist.html"><i class="fas fa-heart"></i></a>
+                <a href="Cart.html"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+        </div>
+
+    <div class="blog_container">
+        <h1>Welcome to the Floral Haven Blog</h1>
+        <p>Stay tuned for the latest updates and articles on floral arrangements, gardening tips, and more!</p>
+
+        <div class="blog-cards">
+            <div class="blog-card">
+                <img src="https://images.pexels.com/photos/2959192/pexels-photo-2959192.jpeg" alt="Blog Image" />
+                <h3>Local Florists</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <button class="read-more-btn" data-title="Local Florists"
+                    data-content="Discover the best local florists in your area, their unique arrangements, and how they bring color to your community. Learn about their stories, specialties, and tips for choosing the perfect bouquet!"
+                    data-img="https://images.pexels.com/photos/2959192/pexels-photo-2959192.jpeg">Read More</button>
+            </div>
+            <div class="blog-card">
+                <img src="https://images.pexels.com/photos/8298416/pexels-photo-8298416.jpeg" alt="Blog Image" />
+                <h3>Flower Power</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <button class="read-more-btn" data-title="Flower Power"
+                    data-content="Explore the influence of flowers in culture, art, and daily life. See how different blooms symbolize emotions and how you can use them to brighten any occasion."
+                    data-img="https://images.pexels.com/photos/8298416/pexels-photo-8298416.jpeg">Read More</button>
+            </div>
+            <div class="blog-card">
+                <img src="https://images.pexels.com/photos/2959193/pexels-photo-2959193.jpeg" alt="Blog Image" />
+                <h3>Floral Trends</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <button class="read-more-btn" data-title="Floral Trends"
+                    data-content="Stay up to date with the latest floral design trends, color palettes, and arrangement styles that are taking the world by storm this season."
+                    data-img="https://images.pexels.com/photos/2959193/pexels-photo-2959193.jpeg">Read More</button>
+            </div>
+            <div class="blog-card">
+                <img src="https://images.pexels.com/photos/2959192/pexels-photo-2959192.jpeg" alt="Blog Image" />
+                <h3>Gardening Tips</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <button class="read-more-btn" data-title="Gardening Tips"
+                    data-content="Get expert advice on growing and caring for your flowers, from soil preparation to watering schedules and pest control."
+                    data-img="https://images.pexels.com/photos/2959192/pexels-photo-2959192.jpeg">Read More</button>
+            </div>
+            <div class="blog-card">
+                <img src="https://images.pexels.com/photos/2959193/pexels-photo-2959193.jpeg" alt="Blog Image" />
+                <h3>Seasonal Flowers</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <button class="read-more-btn" data-title="Seasonal Flowers"
+                    data-content="Find out which flowers are in season, their unique characteristics, and how to incorporate them into your home or events for maximum freshness and beauty."
+                    data-img="https://images.pexels.com/photos/2959193/pexels-photo-2959193.jpeg">Read More</button>
+            </div>
+            <div class="blog-card">
+                <img src="https://images.pexels.com/photos/2959192/pexels-photo-2959192.jpeg" alt="Blog Image" />
+                <h3>Flower Arrangements</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <button class="read-more-btn" data-title="Flower Arrangements"
+                    data-content="Learn the art of arranging flowers for every occasion, from simple bouquets to elaborate centerpieces, with step-by-step guides and inspiration."
+                    data-img="https://images.pexels.com/photos/2959192/pexels-photo-2959192.jpeg">Read More</button>
+            </div>
+            <!-- Modal for Read More -->
+            <div id="blog-modal" class="blog-modal">
+                <div class="blog-modal-content">
+                    <span class="blog-modal-close">&times;</span>
+                    <img id="modal-img" src="" alt="Blog Image" />
+                    <h2 id="modal-title"></h2>
+                    <p id="modal-text"></p>
+                </div>
+            </div>
+            <script>
+                // Modal functionality for blog cards
+                document.querySelectorAll('.read-more-btn').forEach(btn => {
+                    btn.addEventListener('click', function () {
+                        document.getElementById('modal-title').textContent = this.getAttribute('data-title');
+                        document.getElementById('modal-text').textContent = this.getAttribute('data-content');
+                        document.getElementById('modal-img').src = this.getAttribute('data-img');
+                        document.getElementById('blog-modal').style.display = 'flex';
+                    });
+                });
+                document.querySelector('.blog-modal-close').onclick = function () {
+                    document.getElementById('blog-modal').style.display = 'none';
+                };
+                window.onclick = function (event) {
+                    if (event.target === document.getElementById('blog-modal')) {
+                        document.getElementById('blog-modal').style.display = 'none';
+                    }
+                };
+            </script>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2023 Floral Haven. All rights reserved.</p>
+            <div class="social-icons">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-linkedin-in"></i>
+            </div>
+        </div>
+        <div class="footer-links">
+            <a href="Privacy_policy.html">Privacy Policy</a>
+            <a href="Terms_Services.html">Terms of Service</a>
+            <a href="Contact_us.html">Contact Us</a>
+            <a href="About_us.html">About Us</a>
+        </div>
+    </footer>
+</body>
+
+</html>
