@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tenant Verify - Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-shield-halved"></i>
+                <span>AI Tenant Verify</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="features.html" class="nav-link">Features</a>
+                <a href="how-it-works.html" class="nav-link">How It Works</a>
+                <a href="dashboard.html" class="nav-link active">Dashboard</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="login.html" class="btn-login">Login</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Risk Dashboard</h1>
+            <p>Comprehensive analysis with detailed risk metrics and real-time monitoring.</p>
+        </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section class="dashboard" id="dashboard">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 30px;">
+                <a href="upload.html" class="btn btn-primary" style="display: inline-block;">
+                    <i class="fas fa-cloud-upload-alt"></i> Upload Documents
+                </a>
+            </div>
+            <div class="dashboard-grid">
+                <div class="dashboard-card risk-meter-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-gauge-high"></i> Overall Risk Score</h3>
+                    </div>
+                    <div class="risk-meter">
+                        <div class="risk-meter-circle">
+                            <svg viewBox="0 0 100 100">
+                                <circle class="risk-bg" cx="50" cy="50" r="45"></circle>
+                                <circle class="risk-progress" cx="50" cy="50" r="45" id="riskProgress"></circle>
+                            </svg>
+                            <div class="risk-value">
+                                <span class="risk-number" id="riskNumber">0</span>
+                                <span class="risk-label">/ 100</span>
+                            </div>
+                        </div>
+                        <div class="risk-level" id="riskLevel">Calculating...</div>
+                    </div>
+                </div>
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-face-smile"></i> Face Match</h3>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-info">
+                            <span class="stat-label">Biometric Verification</span>
+                            <span class="stat-value" id="faceMatchPercent">0%</span>
+                        </div>
+                        <div class="stat-bar">
+                            <div class="stat-bar-fill" id="faceMatchBar" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="verification-status" id="faceStatus">
+                        <i class="fas fa-circle-notch fa-spin"></i>
+                        <span>Processing...</span>
+                    </div>
+                </div>
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-file-shield"></i> Document Verification</h3>
+                    </div>
+                    <div class="verification-list">
+                        <div class="verification-item">
+                            <span>ID Document</span>
+                            <span class="status verified"><i class="fas fa-check"></i> Verified</span>
+                        </div>
+                        <div class="verification-item">
+                            <span>Proof of Address</span>
+                            <span class="status verified"><i class="fas fa-check"></i> Verified</span>
+                        </div>
+                        <div class="verification-item">
+                            <span>Employment Letter</span>
+                            <span class="status pending"><i class="fas fa-clock"></i> Pending</span>
+                        </div>
+                        <div class="verification-item">
+                            <span>Income Proof</span>
+                            <span class="status verified"><i class="fas fa-check"></i> Verified</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-user-slash"></i> Blacklist Check</h3>
+                    </div>
+                    <div class="blacklist-result">
+                        <div class="blacklist-icon">
+                            <i class="fas fa-shield-check"></i>
+                        </div>
+                        <div class="blacklist-info">
+                            <h4>No Records Found</h4>
+                            <p>Tenant is not in our blacklist database</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-credit-card"></i> Credit Score</h3>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-info">
+                            <span class="stat-label">Credit Rating</span>
+                            <span class="stat-value">720</span>
+                        </div>
+                        <div class="stat-bar">
+                            <div class="stat-bar-fill" style="width: 72%"></div>
+                        </div>
+                    </div>
+                    <div class="verification-status">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Good Credit</span>
+                    </div>
+                </div>
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-gavel"></i> Criminal Records</h3>
+                    </div>
+                    <div class="blacklist-result">
+                        <div class="blacklist-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="blacklist-info">
+                            <h4>Clear Record</h4>
+                            <p>No criminal records found</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4 class="footer-title">About</h4>
+                    <p class="footer-text">AI Tenant Verify is an advanced AI-powered tenant verification system designed to help landlords and property managers make informed decisions.</p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="how-it-works.html">How It Works</a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-envelope"></i> info@aitenantverify.com</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-map-marker"></i> 123 Tech Street, Innovation City</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AI Tenant Verify. All rights reserved.</p>
+                <p>Developed by <strong>Your Name</strong></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

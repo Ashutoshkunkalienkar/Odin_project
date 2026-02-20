@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tenant Verify - Document Upload</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .upload-section {
+            padding: 100px 0;
+            background: var(--secondary-black);
+            min-height: 100vh;
+        }
+        
+        .upload-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .upload-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid var(--dark-gray);
+        }
+        
+        .upload-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .upload-header h2 {
+            font-size: 2rem;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+        
+        .upload-header p {
+            color: var(--lighter-gray);
+        }
+        
+        .upload-steps {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .upload-step {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--lighter-gray);
+        }
+        
+        .upload-step.active {
+            color: var(--white);
+        }
+        
+        .upload-step.completed {
+            color: var(--white);
+        }
+        
+        .upload-step-number {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: var(--dark-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .upload-step.active .upload-step-number {
+            background: var(--white);
+            color: var(--primary-black);
+        }
+        
+        .upload-step.completed .upload-step-number {
+            background: var(--white);
+            color: var(--primary-black);
+        }
+        
+        .document-category {
+            margin-bottom: 30px;
+        }
+        
+        .document-category h3 {
+            font-size: 1.1rem;
+            color: var(--white);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .document-category h3 i {
+            color: var(--white);
+        }
+        
+        .document-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        
+        .document-item {
+            background: var(--secondary-black);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px dashed var(--dark-gray);
+            text-align: center;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        
+        .document-item:hover {
+            border-color: var(--white);
+            background: var(--tertiary-black);
+        }
+        
+        .document-item.selected {
+            border-color: var(--white);
+            border-style: solid;
+            background: var(--tertiary-black);
+        }
+        
+        .document-item i {
+            font-size: 2rem;
+            color: var(--lighter-gray);
+            margin-bottom: 10px;
+        }
+        
+        .document-item.selected i {
+            color: var(--white);
+        }
+        
+        .document-item span {
+            display: block;
+            color: var(--lighter-gray);
+            font-size: 0.9rem;
+        }
+        
+        .document-item.selected span {
+            color: var(--white);
+        }
+        
+        .file-upload-area {
+            border: 2px dashed var(--dark-gray);
+            border-radius: 15px;
+            padding: 50px 30px;
+            text-align: center;
+            transition: var(--transition);
+            margin-bottom: 30px;
+        }
+        
+        .file-upload-area:hover,
+        .file-upload-area.dragover {
+            border-color: var(--white);
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .file-upload-area i {
+            font-size: 4rem;
+            color: var(--lighter-gray);
+            margin-bottom: 20px;
+        }
+        
+        .file-upload-area h4 {
+            font-size: 1.3rem;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+        
+        .file-upload-area p {
+            color: var(--lighter-gray);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+        
+        .file-upload-area input[type="file"] {
+            display: none;
+        }
+        
+        .uploaded-files {
+            margin-bottom: 30px;
+        }
+        
+        .uploaded-file {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 20px;
+            background: var(--secondary-black);
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .uploaded-file-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .uploaded-file-info i {
+            font-size: 1.5rem;
+            color: var(--white);
+        }
+        
+        .uploaded-file-name {
+            color: var(--white);
+            font-size: 0.95rem;
+        }
+        
+        .uploaded-file-size {
+            color: var(--lighter-gray);
+            font-size: 0.8rem;
+        }
+        
+        .uploaded-file-remove {
+            color: var(--lighter-gray);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .uploaded-file-remove:hover {
+            color: #f87171;
+        }
+        
+        .upload-actions {
+            display: flex;
+            gap: 20px;
+            justify-content: flex-end;
+        }
+        
+        .upload-actions .btn {
+            min-width: 150px;
+            text-align: center;
+        }
+        
+        .progress-container {
+            display: none;
+            margin-top: 30px;
+        }
+        
+        .progress-container.active {
+            display: block;
+        }
+        
+        .progress-bar-container {
+            background: var(--dark-gray);
+            border-radius: 10px;
+            height: 10px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+        
+        .progress-bar-fill {
+            height: 100%;
+            background: var(--white);
+            border-radius: 10px;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        
+        .progress-text {
+            color: var(--lighter-gray);
+            font-size: 0.9rem;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .document-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .upload-steps {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .upload-actions {
+                flex-direction: column;
+            }
+            
+            .upload-actions .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-shield-halved"></i>
+                <span>AI Tenant Verify</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="features.html" class="nav-link">Features</a>
+                <a href="how-it-works.html" class="nav-link">How It Works</a>
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="login.html" class="btn-login">Login</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Upload Section -->
+    <section class="upload-section">
+        <div class="upload-container">
+            <div class="upload-card">
+                <div class="upload-header">
+                    <h2><i class="fas fa-cloud-upload-alt"></i> Upload Documents</h2>
+                    <p>Please upload the required documents for tenant verification</p>
+                </div>
+                
+                <div class="upload-steps">
+                    <div class="upload-step completed">
+                        <div class="upload-step-number">1</div>
+                        <span>Basic Info</span>
+                    </div>
+                    <div class="upload-step active">
+                        <div class="upload-step-number">2</div>
+                        <span>Documents</span>
+                    </div>
+                    <div class="upload-step">
+                        <div class="upload-step-number">3</div>
+                        <span>Verification</span>
+                    </div>
+                </div>
+                
+                <div class="document-category">
+                    <h3><i class="fas fa-id-card"></i> Identity Documents</h3>
+                    <div class="document-list">
+                        <div class="document-item" onclick="selectDocument(this, 'passport')">
+                            <i class="fas fa-passport"></i>
+                            <span>Passport</span>
+                        </div>
+                        <div class="document-item" onclick="selectDocument(this, 'national-id')">
+                            <i class="fas fa-id-card"></i>
+                            <span>National ID</span>
+                        </div>
+                        <div class="document-item" onclick="selectDocument(this, 'drivers-license')">
+                            <i class="fas fa-car"></i>
+                            <span>Driver's License</span>
+                        </div>
+                        <div class="document-item" onclick="selectDocument(this, 'voter-id')">
+                            <i class="fas fa-vote-yea"></i>
+                            <span>Voter ID</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="document-category">
+                    <h3><i class="fas fa-home"></i> Proof of Address</h3>
+                    <div class="document-list">
+                        <div class="document-item" onclick="selectDocument(this, 'utility-bill')">
+                            <i class="fas fa-lightbulb"></i>
+                            <span>Utility Bill</span>
+                        </div>
+                        <div class="document-item" onclick="selectDocument(this, 'bank-statement')">
+                            <i class="fas fa-university"></i>
+                            <span>Bank Statement</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="document-category">
+                    <h3><i class="fas fa-briefcase"></i> Employment & Income</h3>
+                    <div class="document-list">
+                        <div class="document-item" onclick="selectDocument(this, 'employment-letter')">
+                            <i class="fas fa-file-contract"></i>
+                            <span>Employment Letter</span>
+                        </div>
+                        <div class="document-item" onclick="selectDocument(this, 'pay-stubs')">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                            <span>Pay Stubs</span>
+                        </div>
+                        <div class="document-item" onclick="selectDocument(this, 'tax-returns')">
+                            <i class="fas fa-file-tax"></i>
+                            <span>Tax Returns</span>
+                        </div>
+                        <div class="document-item" onclick="selectDocument(this, 'bank-statements')">
+                            <i class="fas fa-wallet"></i>
+                            <span>Bank Statements</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="document-category">
+                    <h3><i class="fas fa-building"></i> Previous Landlord</h3>
+                    <div class="document-list">
+                        <div class="document-item" onclick="selectDocument(this, 'landlord-reference')">
+                            <i class="fas fa-user-tie"></i>
+                            <span>Landlord Reference</span>
+                        </div>
+                        <div class="document-item" onclick="selectDocument(this, 'lease-agreement')">
+                            <i class="fas fa-file-signature"></i>
+                            <span>Previous Lease</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- File Upload Area -->
+                <div class="file-upload-area" id="dropZone">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <h4>Drag & Drop Files Here</h4>
+                    <p>or click to browse files</p>
+                    <input type="file" id="fileInput" multiple accept=".pdf,.jpg,.jpeg,.png,.doc,.docx">
+                    <button type="button" class="btn btn-secondary" onclick="document.getElementById('fileInput').click()">
+                        Browse Files
+                    </button>
+                </div>
+                
+                <!-- Uploaded Files List -->
+                <div class="uploaded-files" id="uploadedFiles"></div>
+                
+                <!-- Progress Bar -->
+                <div class="progress-container" id="progressContainer">
+                    <div class="progress-bar-container">
+                        <div class="progress-bar-fill" id="progressBar"></div>
+                    </div>
+                    <p class="progress-text" id="progressText">Uploading... 0%</p>
+                </div>
+                
+                <div class="upload-actions">
+                    <a href="dashboard.html" class="btn btn-secondary">Cancel</a>
+                    <button type="button" class="btn btn-primary" onclick="uploadDocuments()">
+                        <i class="fas fa-upload"></i> Upload Documents
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+        // File upload functionality
+        const fileInput = document.getElementById('fileInput');
+        const dropZone = document.getElementById('dropZone');
+        const uploadedFiles = document.getElementById('uploadedFiles');
+        const progressContainer = document.getElementById('progressContainer');
+        const progressBar = document.getElementById('progressBar');
+        const progressText = document.getElementById('progressText');
+        
+        let files = [];
+        
+        // Click to upload
+        fileInput.addEventListener('change', handleFiles);
+        
+        // Drag and drop
+        dropZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropZone.classList.add('dragover');
+        });
+        
+        dropZone.addEventListener('dragleave', () => {
+            dropZone.classList.remove('dragover');
+        });
+        
+        dropZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropZone.classList.remove('dragover');
+            handleFileList(e.dataTransfer.files);
+        });
+        
+        function handleFiles(e) {
+            handleFileList(e.target.files);
+        }
+        
+        function handleFileList(fileList) {
+            for (let i = 0; i < fileList.length; i++) {
+                files.push(fileList[i]);
+            }
+            updateFileList();
+        }
+        
+        function updateFileList() {
+            uploadedFiles.innerHTML = '';
+            files.forEach((file, index) => {
+                const fileDiv = document.createElement('div');
+                fileDiv.className = 'uploaded-file';
+                fileDiv.innerHTML = `
+                    <div class="uploaded-file-info">
+                        <i class="fas fa-file-alt"></i>
+                        <div>
+                            <div class="uploaded-file-name">${file.name}</div>
+                            <div class="uploaded-file-size">${formatFileSize(file.size)}</div>
+                        </div>
+                    </div>
+                    <i class="fas fa-times uploaded-file-remove" onclick="removeFile(${index})"></i>
+                `;
+                uploadedFiles.appendChild(fileDiv);
+            });
+        }
+        
+        function removeFile(index) {
+            files.splice(index, 1);
+            updateFileList();
+        }
+        
+        function formatFileSize(bytes) {
+            if (bytes === 0) return '0 Bytes';
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+        
+        function selectDocument(element, type) {
+            element.classList.toggle('selected');
+        }
+        
+        function uploadDocuments() {
+            if (files.length === 0) {
+                alert('Please select at least one document to upload.');
+                return;
+            }
+            
+            progressContainer.classList.add('active');
+            let progress = 0;
+            
+            const interval = setInterval(() => {
+                progress += Math.random() * 15;
+                if (progress >= 100) {
+                    progress = 100;
+                    clearInterval(interval);
+                    
+                    setTimeout(() => {
+                        alert('Documents uploaded successfully! Redirecting to verification page...');
+                        window.location.href = 'dashboard.html';
+                    }, 500);
+                }
+                
+                progressBar.style.width = progress + '%';
+                progressText.textContent = 'Uploading... ' + Math.round(progress) + '%';
+            }, 200);
+        }
+    </script>
+</body>
+</html>
