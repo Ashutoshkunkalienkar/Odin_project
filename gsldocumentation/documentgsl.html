@@ -2,18 +2,210 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Medical Reimbursement and Payment Processing System for Retired Employees - Project Documentation</title>
 <style>
+/* ==========================================================================
+   Base Print & Page Formatting (Preserves A4 Layout Exactly)
+   ========================================================================== */
 @page {
     size: A4;
     margin: 20mm 15mm 20mm 15mm;
 }
+
 @media print {
-    body { font-size: 11pt; }
-    .page-break { page-break-before: always; }
-    .no-break { page-break-inside: avoid; }
-    h1 { page-break-before: always; }
+    body {
+        font-size: 11pt !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        background-color: #ffffff !important;
+        color: #000000 !important;
+    }
+    .page-break {
+        page-break-before: always !important;
+    }
+    .no-break {
+        page-break-inside: avoid !important;
+    }
+    h1 {
+        page-break-before: always !important;
+        color: #1e3a8a !important;
+        font-size: 20pt !important;
+        border-bottom: 2.5px solid #2563eb !important;
+        padding-bottom: 8px !important;
+        margin-top: 35px !important;
+        margin-bottom: 20px !important;
+    }
+    h2 {
+        color: #0f766e !important;
+        font-size: 15pt !important;
+        margin-top: 25px !important;
+        margin-bottom: 12px !important;
+    }
+    h3 {
+        color: #334155 !important;
+        font-size: 12.5pt !important;
+        margin-top: 20px !important;
+        margin-bottom: 8px !important;
+    }
+    p {
+        text-align: justify !important;
+        margin-bottom: 14px !important;
+        font-size: 11pt !important;
+        line-height: 1.6 !important;
+    }
+    ul, ol {
+        margin-bottom: 14px !important;
+        padding-left: 25px !important;
+    }
+    li {
+        margin-bottom: 6px !important;
+        font-size: 11pt !important;
+    }
+    .cover-page {
+        text-align: center !important;
+        padding: 60px 20px 40px 20px !important;
+        page-break-after: always !important;
+        min-height: 90vh !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+    }
+    .cover-title {
+        font-size: 26pt !important;
+        font-weight: 800 !important;
+        color: #0f172a !important;
+        line-height: 1.25 !important;
+    }
+    .cover-subtitle {
+        font-size: 13pt !important;
+        color: #475569 !important;
+        font-style: italic !important;
+        margin-top: 15px !important;
+    }
+    .cover-meta {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-around !important;
+        margin: 40px 0 !important;
+        text-align: left !important;
+    }
+    .signature-container {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        margin-top: 80px !important;
+    }
+    .signature-block {
+        text-align: center !important;
+    }
+    .signature-line {
+        border-top: 1.5px solid #334155 !important;
+        width: 220px !important;
+        padding-top: 8px !important;
+        font-weight: 700 !important;
+    }
+    .table-container {
+        width: 100% !important;
+        overflow: visible !important;
+        border: none !important;
+        margin: 18px 0 !important;
+        box-shadow: none !important;
+        display: block !important;
+    }
+    table.academic-table {
+        width: 100% !important;
+        min-width: auto !important;
+        font-size: 10pt !important;
+        page-break-inside: avoid !important;
+        border-collapse: collapse !important;
+    }
+    table.academic-table th {
+        background-color: #1e3a8a !important;
+        color: #ffffff !important;
+        font-weight: 700 !important;
+        padding: 9px 10px !important;
+        border: 1px solid #cbd5e1 !important;
+        text-align: left !important;
+    }
+    table.academic-table td {
+        padding: 8px 10px !important;
+        border: 1px solid #cbd5e1 !important;
+        vertical-align: top !important;
+    }
+    table.academic-table tr:nth-child(even) {
+        background-color: #f8fafc !important;
+    }
+    .figure-container {
+        text-align: center !important;
+        margin: 22px 0 !important;
+        page-break-inside: avoid !important;
+    }
+    .figure-container img {
+        max-width: 95% !important;
+        max-height: 480px !important;
+        border: 1px solid #cbd5e1 !important;
+        border-radius: 6px !important;
+        box-shadow: none !important;
+    }
+    .caption {
+        font-size: 9.5pt !important;
+        font-style: italic !important;
+        color: #475569 !important;
+        margin-top: 6px !important;
+        text-align: center !important;
+    }
+    .callout {
+        background: #f0fdf4 !important;
+        border-left: 4.5px solid #16a34a !important;
+        padding: 12px 16px !important;
+        margin: 18px 0 !important;
+        font-size: 10.5pt !important;
+    }
+    pre {
+        background-color: #0f172a !important;
+        color: #f8fafc !important;
+        padding: 14px !important;
+        border-radius: 6px !important;
+        font-family: 'Consolas', monospace !important;
+        font-size: 9.5pt !important;
+        overflow: visible !important;
+        white-space: pre-wrap !important;
+        word-break: break-word !important;
+        page-break-inside: avoid !important;
+    }
+    code {
+        background-color: #f1f5f9 !important;
+        padding: 2px 5px !important;
+        border-radius: 4px !important;
+        font-family: 'Consolas', monospace !important;
+        font-size: 9.5pt !important;
+        color: #0f172a !important;
+    }
+    .toc-list {
+        list-style-type: none !important;
+        padding-left: 0 !important;
+    }
+    .toc-list li {
+        padding: 5px 0 !important;
+        border-bottom: 1px dotted #cbd5e1 !important;
+        display: flex !important;
+        justify-content: space-between !important;
+    }
 }
+
+/* ==========================================================================
+   Screen Styles & Base Reset
+   ========================================================================== */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
     line-height: 1.6;
@@ -21,7 +213,67 @@ body {
     background-color: #ffffff;
     margin: 0;
     padding: 20px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
+
+/* Base Headings */
+h1 {
+    color: #1e3a8a;
+    font-size: 20pt;
+    border-bottom: 2.5px solid #2563eb;
+    padding-bottom: 8px;
+    margin-top: 35px;
+    margin-bottom: 20px;
+    line-height: 1.3;
+    overflow-wrap: break-word;
+}
+
+h2 {
+    color: #0f766e;
+    font-size: 15pt;
+    margin-top: 25px;
+    margin-bottom: 12px;
+    line-height: 1.35;
+    overflow-wrap: break-word;
+}
+
+h3 {
+    color: #334155;
+    font-size: 12.5pt;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    line-height: 1.4;
+    overflow-wrap: break-word;
+}
+
+p {
+    text-align: justify;
+    margin-bottom: 14px;
+    overflow-wrap: break-word;
+}
+
+ul, ol {
+    margin-bottom: 14px;
+    padding-left: 25px;
+}
+
+li {
+    margin-bottom: 6px;
+    overflow-wrap: break-word;
+}
+
+a {
+    color: #2563eb;
+    text-decoration: none;
+    overflow-wrap: break-word;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Cover Page */
 .cover-page {
     text-align: center;
     padding: 60px 20px 40px 20px;
@@ -30,45 +282,52 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    box-sizing: border-box;
 }
-h1 {
-    color: #1e3a8a;
-    font-size: 20pt;
-    border-bottom: 2.5px solid #2563eb;
-    padding-bottom: 8px;
-    margin-top: 35px;
-    margin-bottom: 20px;
+
+.cover-meta {
+    display: flex;
+    justify-content: space-around;
+    margin: 40px 0;
+    text-align: left;
 }
-h2 {
-    color: #0f766e;
-    font-size: 15pt;
-    margin-top: 25px;
-    margin-bottom: 12px;
+
+/* Signature Area */
+.signature-container {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
 }
-h3 {
-    color: #334155;
-    font-size: 12.5pt;
-    margin-top: 20px;
-    margin-bottom: 8px;
+
+.signature-block {
+    text-align: center;
 }
-p {
-    text-align: justify;
-    margin-bottom: 14px;
+
+.signature-line {
+    border-top: 1.5px solid #334155;
+    width: 220px;
+    padding-top: 8px;
+    font-weight: 700;
 }
-ul, ol {
-    margin-bottom: 14px;
-    padding-left: 25px;
+
+/* Tables & Containers */
+.table-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 18px 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    box-sizing: border-box;
 }
-li {
-    margin-bottom: 6px;
-}
+
 table.academic-table {
     width: 100%;
     border-collapse: collapse;
-    margin: 18px 0;
+    margin: 0;
     font-size: 10pt;
     page-break-inside: avoid;
 }
+
 table.academic-table th {
     background-color: #1e3a8a;
     color: #ffffff;
@@ -77,40 +336,55 @@ table.academic-table th {
     border: 1px solid #cbd5e1;
     text-align: left;
 }
+
 table.academic-table td {
     padding: 8px 10px;
     border: 1px solid #cbd5e1;
     vertical-align: top;
 }
+
 table.academic-table tr:nth-child(even) {
     background-color: #f8fafc;
 }
+
+/* Figures and Media */
 .figure-container {
     text-align: center;
     margin: 22px 0;
     page-break-inside: avoid;
+    max-width: 100%;
 }
+
 .figure-container img {
     max-width: 95%;
     max-height: 480px;
+    height: auto;
     border: 1px solid #cbd5e1;
     border-radius: 6px;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
+    display: inline-block;
 }
+
 .caption {
     font-size: 9.5pt;
     font-style: italic;
     color: #475569;
     margin-top: 6px;
     text-align: center;
+    overflow-wrap: break-word;
 }
+
 .callout {
     background: #f0fdf4;
     border-left: 4.5px solid #16a34a;
     padding: 12px 16px;
     margin: 18px 0;
     font-size: 10.5pt;
+    border-radius: 0 4px 4px 0;
+    overflow-wrap: break-word;
 }
+
+/* Code & Pre */
 code {
     background-color: #f1f5f9;
     padding: 2px 5px;
@@ -118,7 +392,10 @@ code {
     font-family: 'Consolas', monospace;
     font-size: 9.5pt;
     color: #0f172a;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
+
 pre {
     background-color: #0f172a;
     color: #f8fafc;
@@ -127,17 +404,326 @@ pre {
     font-family: 'Consolas', monospace;
     font-size: 9.5pt;
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100%;
+    box-sizing: border-box;
     page-break-inside: avoid;
 }
+
+pre code {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+    color: inherit;
+    font-size: inherit;
+    white-space: pre;
+    word-break: normal;
+    overflow-wrap: normal;
+}
+
+/* Table of Contents */
 .toc-list {
     list-style-type: none;
     padding-left: 0;
 }
+
 .toc-list li {
     padding: 5px 0;
     border-bottom: 1px dotted #cbd5e1;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 4px;
+    overflow-wrap: break-word;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints for Screen Viewports
+   ========================================================================== */
+
+/* 1. Large Tablets / Small Laptops (<= 1024px) */
+@media screen and (max-width: 1024px) {
+    body {
+        padding: 18px 16px;
+    }
+    .figure-container img {
+        max-width: 98%;
+    }
+}
+
+/* 2. Medium Tablets (<= 820px) */
+@media screen and (max-width: 820px) {
+    body {
+        padding: 16px 14px;
+    }
+    h1 {
+        font-size: 18pt;
+        margin-top: 30px;
+        margin-bottom: 16px;
+    }
+    h2 {
+        font-size: 14pt;
+        margin-top: 22px;
+        margin-bottom: 10px;
+    }
+    .cover-title {
+        font-size: 22pt !important;
+    }
+    .figure-container img {
+        max-width: 100%;
+        max-height: 440px;
+    }
+    table.academic-table {
+        font-size: 9.5pt;
+    }
+}
+
+/* 3. Portrait Tablets (<= 768px) */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 16px 12px;
+    }
+    h1 {
+        font-size: 17pt;
+        padding-bottom: 6px;
+        margin-top: 28px;
+    }
+    h2 {
+        font-size: 13.5pt;
+    }
+    h3 {
+        font-size: 12pt;
+    }
+    .cover-title {
+        font-size: 20pt !important;
+    }
+    .cover-subtitle {
+        font-size: 12pt !important;
+    }
+    .table-container {
+        margin: 14px 0;
+        border: 1px solid #cbd5e1;
+        border-radius: 6px;
+    }
+    table.academic-table {
+        min-width: 540px;
+        font-size: 9pt;
+    }
+    table.academic-table th, table.academic-table td {
+        padding: 7px 9px;
+    }
+    pre {
+        font-size: 9pt;
+        padding: 12px;
+    }
+    .figure-container img {
+        max-height: 380px;
+    }
+}
+
+/* 4. Small Tablets & Large Phones (<= 600px) */
+@media screen and (max-width: 600px) {
+    body {
+        padding: 14px 12px;
+    }
+    p {
+        text-align: left;
+        font-size: 11pt;
+        line-height: 1.6;
+    }
+    ul, ol {
+        padding-left: 20px;
+    }
+    li {
+        font-size: 10.5pt;
+    }
+    .cover-page {
+        min-height: auto;
+        padding: 35px 12px 25px 12px;
+    }
+    .cover-meta {
+        flex-direction: column !important;
+        gap: 16px !important;
+        margin: 24px 0 !important;
+        padding: 0 4px !important;
+    }
+    .cover-meta > div {
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    .signature-container {
+        flex-direction: column !important;
+        gap: 32px !important;
+        margin-top: 45px !important;
+        align-items: center !important;
+    }
+    .signature-block {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    .signature-line {
+        width: min(240px, 80%) !important;
+    }
+    .figure-container img {
+        max-height: 320px;
+    }
+}
+
+/* 5. Mobile Handsets (<= 480px) */
+@media screen and (max-width: 480px) {
+    body {
+        padding: 12px 10px;
+    }
+    h1 {
+        font-size: 15pt;
+        border-bottom-width: 2px;
+        margin-top: 24px;
+        margin-bottom: 14px;
+    }
+    h2 {
+        font-size: 13pt;
+        margin-top: 18px;
+        margin-bottom: 8px;
+    }
+    h3 {
+        font-size: 11.5pt;
+        margin-top: 15px;
+        margin-bottom: 6px;
+    }
+    .cover-title {
+        font-size: 17pt !important;
+        line-height: 1.3 !important;
+    }
+    .cover-subtitle {
+        font-size: 11pt !important;
+        margin-top: 10px !important;
+    }
+    .cover-degree-heading {
+        font-size: 13pt !important;
+    }
+    .cover-degree-sub {
+        font-size: 11pt !important;
+    }
+    table.academic-table {
+        min-width: 500px;
+        font-size: 8.5pt;
+    }
+    table.academic-table th, table.academic-table td {
+        padding: 6px 8px;
+    }
+    pre {
+        font-size: 8.5pt;
+        padding: 10px;
+        border-radius: 4px;
+    }
+    .callout {
+        padding: 10px 12px;
+        font-size: 10pt;
+        border-left-width: 3.5px;
+    }
+    .figure-container img {
+        max-height: 280px;
+    }
+}
+
+/* 6. Standard Mobile Phones (<= 430px) */
+@media screen and (max-width: 430px) {
+    body {
+        padding: 12px 8px;
+    }
+    h1 {
+        font-size: 14.5pt;
+    }
+    .cover-title {
+        font-size: 16pt !important;
+    }
+    table.academic-table {
+        min-width: 460px;
+        font-size: 8.5pt;
+    }
+    .figure-container img {
+        max-height: 250px;
+    }
+}
+
+/* 7. Compact Mobile Phones (<= 390px) */
+@media screen and (max-width: 390px) {
+    body {
+        padding: 10px 6px;
+    }
+    h1 {
+        font-size: 14pt;
+        margin-top: 22px;
+    }
+    h2 {
+        font-size: 12pt;
+    }
+    h3 {
+        font-size: 11pt;
+    }
+    .cover-title {
+        font-size: 15pt !important;
+    }
+    .cover-subtitle {
+        font-size: 10pt !important;
+    }
+    table.academic-table {
+        min-width: 430px;
+        font-size: 8pt;
+    }
+    table.academic-table th, table.academic-table td {
+        padding: 5px 7px;
+    }
+    pre {
+        font-size: 8pt;
+        padding: 8px;
+    }
+    .figure-container img {
+        max-height: 220px;
+    }
+}
+
+/* 8. Smallest Mobile Phones (<= 360px) */
+@media screen and (max-width: 360px) {
+    body {
+        padding: 8px 5px;
+    }
+    h1 {
+        font-size: 13.5pt;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    h2 {
+        font-size: 11.5pt;
+    }
+    h3 {
+        font-size: 10.5pt;
+    }
+    p, li {
+        font-size: 10pt;
+    }
+    .cover-title {
+        font-size: 14pt !important;
+    }
+    .cover-meta {
+        padding: 0 !important;
+    }
+    table.academic-table {
+        min-width: 400px;
+        font-size: 7.5pt;
+    }
+    table.academic-table th, table.academic-table td {
+        padding: 4px 6px;
+    }
+    pre {
+        font-size: 7.5pt;
+        padding: 6px;
+    }
+    .figure-container img {
+        max-height: 190px;
+    }
 }
 </style>
 </head>
@@ -149,21 +735,21 @@ pre {
     </div>
     
     <div style="margin: 40px 0;">
-        <div style="font-size: 26pt; font-weight: 800; color: #0f172a; line-height: 1.25;">
+        <div class="cover-title" style="font-size: 26pt; font-weight: 800; color: #0f172a; line-height: 1.25;">
             Medical Reimbursement and Payment Processing System for Retired Employees
         </div>
-        <div style="font-size: 13pt; color: #475569; font-style: italic; margin-top: 15px;">
+        <div class="cover-subtitle" style="font-size: 13pt; color: #475569; font-style: italic; margin-top: 15px;">
             A Role-Separated Healthcare Claim Verification, Audit Governance, and Treasury Settlement Platform
         </div>
     </div>
 
     <div style="margin: 30px 0;">
         <div style="font-size: 12pt; color: #64748b;">Submitted in partial fulfillment of the requirements for the degree of</div>
-        <div style="font-size: 16pt; font-weight: 800; color: #1e3a8a; margin-top: 5px;">BACHELOR OF TECHNOLOGY / ENGINEERING</div>
-        <div style="font-size: 13pt; font-weight: 600; color: #2563eb;">IN COMPUTER SCIENCE &amp; ENGINEERING</div>
+        <div class="cover-degree-heading" style="font-size: 16pt; font-weight: 800; color: #1e3a8a; margin-top: 5px;">BACHELOR OF TECHNOLOGY / ENGINEERING</div>
+        <div class="cover-degree-sub" style="font-size: 13pt; font-weight: 600; color: #2563eb;">IN COMPUTER SCIENCE &amp; ENGINEERING</div>
     </div>
 
-    <div style="display: flex; justify-content: space-around; margin: 40px 0; text-align: left;">
+    <div class="cover-meta" style="display: flex; justify-content: space-around; margin: 40px 0; text-align: left;">
         <div style="border-left: 3px solid #1e3a8a; padding-left: 15px;">
             <div style="font-size: 11pt; font-weight: 700; color: #64748b; text-transform: uppercase;">Submitted By:</div>
             <!-- <div style="font-size: 13pt; font-weight: 700; color: #0f172a; margin-top: 4px;">1. Ashutosh</div> -->
@@ -196,13 +782,13 @@ pre {
         The system has been designed, implemented, and verified using modern web engineering principles, featuring role-separated governance, automated five-stage lifecycle tracking, multi-factor email verification, and secure financial reconciliation. The results embodied in this report have been examined and found satisfactory.
     </p>
 
-    <div style="margin-top: 80px; display: flex; justify-content: space-between;">
-        <div style="text-align: center;">
-            <div style="border-top: 1.5px solid #334155; width: 220px; padding-top: 8px; font-weight: 700;">Project Supervisor / Guide</div>
+    <div class="signature-container" style="margin-top: 80px; display: flex; justify-content: space-between;">
+        <div class="signature-block" style="text-align: center;">
+            <div class="signature-line" style="border-top: 1.5px solid #334155; width: 220px; padding-top: 8px; font-weight: 700;">Project Supervisor / Guide</div>
             <div style="font-size: 10pt; color: #64748b;">Department of CSE</div>
         </div>
-        <div style="text-align: center;">
-            <div style="border-top: 1.5px solid #334155; width: 220px; padding-top: 8px; font-weight: 700;">Head of Department (CSE)</div>
+        <div class="signature-block" style="text-align: center;">
+            <div class="signature-line" style="border-top: 1.5px solid #334155; width: 220px; padding-top: 8px; font-weight: 700;">Head of Department (CSE)</div>
             <div style="font-size: 10pt; color: #64748b;">Internal / External Examiner</div>
         </div>
     </div>
@@ -489,6 +1075,7 @@ The system defines three distinct, mutually exclusive user roles:
 <h3>4.3 Role-Permission Matrix</h3>
 The table below formalizes the security permissions enforced by the backend access control layer (`includes/auth.php`):
 
+<div class="table-container">
 <table class="academic-table">
     <thead>
         <tr>
@@ -561,6 +1148,7 @@ The table below formalizes the security permissions enforced by the backend acce
         </tr>
     </tbody>
 </table>
+</div>
 <div class="caption">Table 4.1: Role-Permission Matrix across Application Modules</div>
 
 <div class="page-break"></div>
@@ -753,6 +1341,7 @@ $$\text{Claimed Amount} \neq \text{Sanctioned Amount} = \text{Actual Paid Amount
 3. <strong>Actual Paid Amount</strong>: The exact disbursement released by the Accounts/Treasury department to the pensioner's bank account via NEFT/RTGS. In standard operations, <em>Actual Paid Amount</em> equals <em>Sanctioned Amount</em>.
 
 #<h3>Sample Demonstration Data</h3>
+<div class="table-container">
 <table class="academic-table">
     <thead>
         <tr>
@@ -784,6 +1373,7 @@ $$\text{Claimed Amount} \neq \text{Sanctioned Amount} = \text{Actual Paid Amount
         </tr>
     </tbody>
 </table>
+</div>
 <div class="caption">Table 8.1: Demonstration Financial Accounting Example (SAMPLE / DEMONSTRATION DATA)</div>
 
 <h3>8.5 Real Application Screenshot</h3>
@@ -976,6 +1566,7 @@ The system database (`medical_reimbursement`) is built on MySQL 8.0 using the <s
 <h3>13.2 Detailed Data Dictionary (All 9 Tables)</h3>
 
 #<h3>Table 1: `users` (User Authentication & Profiles)</h3>
+<div class="table-container">
 <table class="academic-table">
     <thead>
         <tr><th>Field Name</th><th>Data Type</th><th>Null</th><th>Key</th><th>Default</th><th>Description</th></tr>
@@ -997,8 +1588,10 @@ The system database (`medical_reimbursement`) is built on MySQL 8.0 using the <s
         <tr><td><code>created_at</code></td><td>TIMESTAMP</td><td>NO</td><td></td><td>CURRENT_TIMESTAMP</td><td>Account registration timestamp</td></tr>
     </tbody>
 </table>
+</div>
 
 #<h3>Table 2: `claims` (Medical Reimbursement Claims)</h3>
+<div class="table-container">
 <table class="academic-table">
     <thead>
         <tr><th>Field Name</th><th>Data Type</th><th>Null</th><th>Key</th><th>Default</th><th>Description</th></tr>
@@ -1025,8 +1618,10 @@ The system database (`medical_reimbursement`) is built on MySQL 8.0 using the <s
         <tr><td><code>submitted_date</code></td><td>TIMESTAMP</td><td>NO</td><td></td><td>CURRENT_TIMESTAMP</td><td>Initial claim filing timestamp</td></tr>
     </tbody>
 </table>
+</div>
 
 #<h3>Table 3: `documents` (Uploaded Medical Vouchers)</h3>
+<div class="table-container">
 <table class="academic-table">
     <thead>
         <tr><th>Field Name</th><th>Data Type</th><th>Null</th><th>Key</th><th>Default</th><th>Description</th></tr>
@@ -1040,8 +1635,10 @@ The system database (`medical_reimbursement`) is built on MySQL 8.0 using the <s
         <tr><td><code>upload_date</code></td><td>TIMESTAMP</td><td>NO</td><td></td><td>CURRENT_TIMESTAMP</td><td>Upload timestamp</td></tr>
     </tbody>
 </table>
+</div>
 
 #<h3>Table 4: `payments` (Settlement Disbursements)</h3>
+<div class="table-container">
 <table class="academic-table">
     <thead>
         <tr><th>Field Name</th><th>Data Type</th><th>Null</th><th>Key</th><th>Default</th><th>Description</th></tr>
@@ -1057,8 +1654,10 @@ The system database (`medical_reimbursement`) is built on MySQL 8.0 using the <s
         <tr><td><code>created_at</code></td><td>TIMESTAMP</td><td>NO</td><td></td><td>CURRENT_TIMESTAMP</td><td>Record creation timestamp</td></tr>
     </tbody>
 </table>
+</div>
 
 #<h3>Table 5: `claim_history` (Audit Trail & State Transitions)</h3>
+<div class="table-container">
 <table class="academic-table">
     <thead>
         <tr><th>Field Name</th><th>Data Type</th><th>Null</th><th>Key</th><th>Default</th><th>Description</th></tr>
@@ -1073,8 +1672,10 @@ The system database (`medical_reimbursement`) is built on MySQL 8.0 using the <s
         <tr><td><code>changed_date</code></td><td>TIMESTAMP</td><td>NO</td><td></td><td>CURRENT_TIMESTAMP</td><td>Event timestamp</td></tr>
     </tbody>
 </table>
+</div>
 
 #<h3>Table 6: `notifications` (In-App User Alerts)</h3>
+<div class="table-container">
 <table class="academic-table">
     <thead>
         <tr><th>Field Name</th><th>Data Type</th><th>Null</th><th>Key</th><th>Default</th><th>Description</th></tr>
@@ -1089,8 +1690,10 @@ The system database (`medical_reimbursement`) is built on MySQL 8.0 using the <s
         <tr><td><code>created_at</code></td><td>TIMESTAMP</td><td>NO</td><td></td><td>CURRENT_TIMESTAMP</td><td>Dispatch timestamp</td></tr>
     </tbody>
 </table>
+</div>
 
 #<h3>Table 7: `otp_verifications` (2FA Authentication Tokens)</h3>
+<div class="table-container">
 <table class="academic-table">
     <thead>
         <tr><th>Field Name</th><th>Data Type</th><th>Null</th><th>Key</th><th>Default</th><th>Description</th></tr>
@@ -1105,6 +1708,7 @@ The system database (`medical_reimbursement`) is built on MySQL 8.0 using the <s
         <tr><td><code>created_at</code></td><td>TIMESTAMP</td><td>NO</td><td></td><td>CURRENT_TIMESTAMP</td><td>Creation timestamp</td></tr>
     </tbody>
 </table>
+</div>
 
 #<h3>Table 8: `password_resets` (Self-Service Recovery Tokens)</h3>
 Stores SHA-256 password reset tokens with 60-minute expiry timestamps and one-time use flags.
@@ -1502,6 +2106,7 @@ The user interface is designed with a strong focus on accessibility for elderly 
 - <strong>Glassmorphism & Micro-Interactions</strong>: Subtle border glows, backdrop filters, and smooth button hover transitions.
 
 <h3>24.2 Color Palette Specifications</h3>
+<div class="table-container">
 <table class="academic-table">
     <thead>
         <tr><th>Role / Element</th><th>Color Token</th><th>Hex Value</th><th>Usage</th></tr>
@@ -1516,6 +2121,7 @@ The user interface is designed with a strong focus on accessibility for elderly 
         <tr><td>Danger Red</td><td><code>--danger-rose</code></td><td>#DC2626</td><td>Rejected claim alerts, invalid validation states</td></tr>
     </tbody>
 </table>
+</div>
 
 <h3>24.3 Typography</h3>
 The system employs <strong>Inter</strong> and <strong>Segoe UI</strong> as the primary font stack, offering high legibility across diverse screen resolutions. Form inputs feature a minimum font size of `16px` on mobile devices to prevent automatic zoom behavior on iOS/Android browsers.
@@ -1584,6 +2190,7 @@ The application implements eight defense-in-depth security layers:
 The application enforces strict validation at both the client side (instant UI feedback) and server side (definitive security boundary).
 
 <h3>26.2 Comprehensive Validation Matrix</h3>
+<div class="table-container">
 <table class="academic-table">
     <thead>
         <tr><th>Form / Field</th><th>Client-Side Validation (HTML5 / JS)</th><th>Server-Side Validation (PHP)</th></tr>
@@ -1602,6 +2209,7 @@ The application enforces strict validation at both the client side (instant UI f
         <tr><td><strong>Treasury: Bank UTR Number</strong></td><td>Required alphanumeric text, min 8 chars</td><td>Trimmed, alphanumeric regex check, non-empty</td></tr>
     </tbody>
 </table>
+</div>
 
 <div class="page-break"></div>
 <h1>Chapter 27: Testing & Quality Assurance</h1>
@@ -1610,6 +2218,7 @@ The application enforces strict validation at both the client side (instant UI f
 Testing was conducted using a rigorous Black-Box and Functional Verification methodology across all functional modules.
 
 <h3>27.2 Comprehensive Test Execution Matrix (25 Test Cases)</h3>
+<div class="table-container">
 <table class="academic-table">
     <thead>
         <tr><th>TC #</th><th>Module / Scenario</th><th>Input Data</th><th>Expected Output</th><th>Actual Result</th><th>Status</th></tr>
@@ -1642,6 +2251,7 @@ Testing was conducted using a rigorous Black-Box and Functional Verification met
         <tr><td>TC25</td><td>Notification: Mark Read</td><td>User clicks notification item</td><td>AJAX call updates <code>is_read = 1</code></td><td>Badge count decremented in real time</td><td style="color:#16a34a; font-weight:700;">PASS</td></tr>
     </tbody>
 </table>
+</div>
 
 <div class="page-break"></div>
 <h1>Chapter 28: Responsive Design Testing</h1>
@@ -1649,6 +2259,7 @@ Testing was conducted using a rigorous Black-Box and Functional Verification met
 <h3>28.1 Viewport Compatibility Testing</h3>
 The application was evaluated across eight standard viewport dimensions using Google Chrome Headless and Chrome DevTools:
 
+<div class="table-container">
 <table class="academic-table">
     <thead>
         <tr><th>Device Class</th><th>Target Viewport</th><th>Layout Behavior</th><th>Result</th></tr>
@@ -1664,6 +2275,7 @@ The application was evaluated across eight standard viewport dimensions using Go
         <tr><td>Small Android Handset</td><td>360 &times; 740 px</td><td>Clean single-column rendering without horizontal overflow</td><td style="color:#16a34a; font-weight:700;">OPTIMAL</td></tr>
     </tbody>
 </table>
+</div>
 
 <div class="page-break"></div>
 <h1>Chapter 29: Deployment Guide</h1>
@@ -1783,6 +2395,7 @@ The deployment topology models a secure, distributed cloud deployment:
 5. <strong>Zero Paper Consumption</strong>: Complete digital archiving reduces storage footprint and prevents paper document loss.
 
 <h3>33.2 Quantitative Operational Improvements</h3>
+<div class="table-container">
 <table class="academic-table">
     <thead>
         <tr><th>Operational Metric</th><th>Manual Paper System</th><th>Proposed Digital System</th><th>Improvement</th></tr>
@@ -1795,6 +2408,7 @@ The deployment topology models a secure, distributed cloud deployment:
         <tr><td>Treasury Settlement Reconciliation</td><td>Manual Spreadsheets (Hours)</td><td>Instant UTR Ledger Tracking</td><td>Instant Financial Auditing</td></tr>
     </tbody>
 </table>
+</div>
 
 <div class="page-break"></div>
 <h1>Chapter 34: System Limitations</h1>
@@ -1847,6 +2461,7 @@ The system meets all initial functional requirements and stands as a complete, p
 <h1>Chapter 38: Technical Glossary</h1>
 
 <h3>38.1 Definitions of Technical Terms & Acronyms</h3>
+<div class="table-container">
 <table class="academic-table">
     <thead>
         <tr><th>Acronym / Term</th><th>Full Expansion</th><th>Contextual Engineering Definition</th></tr>
@@ -1868,6 +2483,7 @@ The system meets all initial functional requirements and stands as a complete, p
         <tr><td><strong>ACID</strong></td><td>Atomicity, Consistency, Isolation, Durability</td><td>Set of properties guaranteeing reliable relational database transaction execution.</td></tr>
     </tbody>
 </table>
+</div>
 
 <div class="page-break"></div>
 <h1>Appendix: 12-Point Final Documentation Audit</h1>
